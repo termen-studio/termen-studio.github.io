@@ -3,6 +3,15 @@
   const motion = root.classList.contains('motion');
   const calm = root.classList.contains('calm'); // reduced motion: keep the films, drop flashes and shakes
   const behavior = motion && !calm ? 'smooth' : 'auto';
+
+  /* ---------- Smooth wheel scrolling (Lenis): mouse only, off with reduced motion ---------- */
+  if (motion && !calm && window.Lenis && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.09, anchors: true });
+    if (!root.classList.contains('is-ready')) {
+      lenis.stop();
+      new MutationObserver((m, o) => { if (root.classList.contains('is-ready')) { o.disconnect(); lenis.start(); } }).observe(root, { attributes: true, attributeFilter: ['class'] });
+    }
+  }
   const ready = () => root.classList.add('is-ready');
   const ease = (t) => 1 - Math.pow(1 - t, 3);
   const theme = document.body.dataset.theme || 'avr';

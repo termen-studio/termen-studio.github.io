@@ -396,3 +396,9 @@ a { color: inherit; }
   .facts { padding-left: var(--m); }
   .facts__list { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
 }
+
+/* Lenis smooth wheel scrolling (from lenis.css 1.3.27) */
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent], .lenis [data-lenis-prevent-wheel] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
