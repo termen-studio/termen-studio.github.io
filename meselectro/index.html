@@ -11,7 +11,7 @@
   <link rel="preload" href="media/g-lines.mp4" as="video" type="video/mp4">
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
-  <script>var d=document.documentElement;d.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]motion=1/.test(location.search))d.classList.add('motion');setTimeout(function(){d.classList.add('is-ready')},3500)</script>
+  <script>var d=document.documentElement;d.classList.add('js');d.classList.add('motion');if(matchMedia('(prefers-reduced-motion: reduce)').matches&&!/[?&]motion=1/.test(location.search))d.classList.add('calm');setTimeout(function(){d.classList.add('is-ready')},3500)</script>
   <script src="main.js" defer></script>
 </head>
 <body>

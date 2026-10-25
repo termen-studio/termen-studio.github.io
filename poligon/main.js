@@ -1,7 +1,8 @@
 (() => {
   const root = document.documentElement;
   const motion = root.classList.contains('motion');
-  const behavior = motion ? 'smooth' : 'auto';
+  const calm = root.classList.contains('calm'); // reduced motion: keep the films, drop flashes and shakes
+  const behavior = motion && !calm ? 'smooth' : 'auto';
   const ready = () => root.classList.add('is-ready');
   const ease = (t) => 1 - Math.pow(1 - t, 3);
   const theme = document.body.dataset.theme || 'avr';
@@ -103,7 +104,7 @@
     const next = () => {
       if (!visible || document.hidden) { timer = setTimeout(next, 800); return; }
       const n = (i + 1) % clips.length;
-      if (power.animate) {
+      if (power.animate && !calm) {
         power.animate([{ opacity: 0 }, { opacity: 0.92, offset: 0.1 }, { opacity: 0.25, offset: 0.2 }, { opacity: 1, offset: 0.34 }, { opacity: 1, offset: 0.55 }, { opacity: 0 }], { duration: 620, easing: 'linear' });
         film.animate([{ transform: 'none' }, { transform: 'translate3d(-3px, 1px, 0) scale(1.004)', offset: 0.12 }, { transform: 'translate3d(2px, -1px, 0)', offset: 0.24 }, { transform: 'none', offset: 0.4 }, { transform: 'none' }], { duration: 620 });
         setTimeout(() => show(n), 280);
