@@ -26,7 +26,7 @@ precision mediump float;
 #endif
 uniform sampler2D uVideo, uMask;
 uniform vec2 uRes, uVid, uMouse;
-uniform float uLight;
+uniform float uLight, uStage;
 uniform vec3 uKey;
 varying vec2 vUv;
 
@@ -36,10 +36,18 @@ float hot(vec2 uv) { return smoothstep(0.55, 0.95, luma(uv)); }
 
 void main() {
   vec2 frag = vUv * uRes;
-  float s = max(uRes.x / uVid.x, uRes.y / uVid.y);
-  vec2 size = uVid * s;
-  vec2 uv = (frag - (uRes - size) * 0.5) / size;            // film coordinates, like object-fit: cover
-  vec3 col = texture2D(uVideo, uv).rgb;
+  // landscape: the car stands on a stage in the upper part of the screen (uStage of the height, never wider than the
+  // screen), its edges fade into the dark hall, and the title below sits on dark floor. Portrait: object-fit: cover
+  float ra = uRes.x / uRes.y, va = uVid.x / uVid.y, s;
+  vec2 off;
+  if (ra > 1.2) {
+    s = min(uRes.y * uStage / uVid.y, uRes.x / uVid.x);
+    off = vec2((uRes.x - uVid.x * s) * 0.5, uRes.y * 0.98 - uVid.y * s);
+  } else { s = max(uRes.x / uVid.x, uRes.y / uVid.y); off = (uRes - uVid * s) * 0.5; }
+  vec2 uv = (frag - off) / (uVid * s);
+  vec3 hall = vec3(0.036, 0.04, 0.045);
+  float stage = smoothstep(0.0, 0.2, uv.y) * smoothstep(0.0, 0.06, uv.x) * smoothstep(1.0, 0.94, uv.x) * smoothstep(1.0, 0.96, uv.y);
+  vec3 col = mix(hall, texture2D(uVideo, clamp(uv, 0.0, 1.0)).rgb, stage);
   float car = mix(texture2D(uMask, tile(uKey.x, uv)).r, texture2D(uMask, tile(uKey.y, uv)).r, uKey.z);
 
   // the lamps' reflections are already in the paint: find them, and their glow on two rings around each pixel
@@ -92,7 +100,7 @@ void main() {
   gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
   const U = {};
-  for (const name of ['uVideo', 'uMask', 'uRes', 'uVid', 'uMouse', 'uLight', 'uKey']) U[name] = gl.getUniformLocation(prog, name);
+  for (const name of ['uVideo', 'uMask', 'uRes', 'uVid', 'uMouse', 'uLight', 'uKey', 'uStage']) U[name] = gl.getUniformLocation(prog, name);
   const texture = (unit) => {
     const t = gl.createTexture();
     gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, t);
@@ -170,6 +178,7 @@ void main() {
     gl.uniform2f(U.uVid, video.videoWidth || 1920, video.videoHeight || 1080);
     gl.uniform2f(U.uMouse, mx, my);
     gl.uniform1f(U.uLight, light);
+    gl.uniform1f(U.uStage, H < 950 ? 0.72 : 0.84);   // low laptop screens: a smaller car, so the title never covers the plate
     gl.uniform3f(U.uKey, k0, Math.min(KEYS - 1, k0 + 1), fk - k0);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   };
