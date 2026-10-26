@@ -66,8 +66,11 @@
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
-    if (video.readyState >= 2) cover(video, video.videoWidth, video.videoHeight);
-    else if (poster.complete && poster.naturalWidth) cover(poster, poster.naturalWidth, poster.naturalHeight);
+    const glMode = scene.dataset.gl;   // set by qlac.js: '1' when the WebGL pass draws the film, '0' when it gave up
+    if (glMode !== '1') {
+      if (glMode !== 'pending' && video.readyState >= 2) cover(video, video.videoWidth, video.videoHeight);
+      else if (poster.complete && poster.naturalWidth) cover(poster, poster.naturalWidth, poster.naturalHeight);
+    }
 
     // the wave: every cell is black until its lamp switches on, then the car is lit in full
     for (const c of cells) {
@@ -87,7 +90,7 @@
     for (const c of cells) {
       const since = el - c.on;
       const flash = since < 0 ? 0 : Math.max(0, 1 - since / 900);
-      const near = user ? Math.pow(Math.max(0, 1 - Math.hypot(c.x - px, c.y - py) / reach), 1.5) : 0;
+      const near = user && glMode !== '1' ? Math.pow(Math.max(0, 1 - Math.hypot(c.x - px, c.y - py) / reach), 1.5) : 0;   // with WebGL the lacquer pass does the cursor light
       c.g += (near - c.g) * 0.12;
       const a = Math.max(flash, c.g * 0.85);
       if (a < 0.03) continue;
