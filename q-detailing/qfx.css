@@ -65,3 +65,10 @@ html.has-qcursor, html.has-qcursor a, html.has-qcursor button { cursor: none; }
   .ceil__title { font-size: 2.15rem; }
   .ceil__eyebrow { letter-spacing: 0.16em; }
 }
+
+/* the dark hall: the bottom of the frame falls into shadow under the title, so the bright plate does not fight it */
+.ceil::after { background: linear-gradient(0deg, rgba(5, 6, 6, 0.94) 0%, rgba(5, 6, 6, 0.66) 24%, rgba(5, 6, 6, 0.2) 42%, rgba(5, 6, 6, 0) 56%), linear-gradient(180deg, rgba(5, 6, 6, 0.5) 0%, rgba(5, 6, 6, 0) 14%); }
+@media (max-width: 45em) {
+  /* on a phone the film is cropped to the centre, so the plate sits right under the title: darken more of the frame */
+  .ceil::after { background: linear-gradient(0deg, rgba(5, 6, 6, 0.96) 0%, rgba(5, 6, 6, 0.82) 38%, rgba(5, 6, 6, 0.35) 56%, rgba(5, 6, 6, 0) 70%), linear-gradient(180deg, rgba(5, 6, 6, 0.5) 0%, rgba(5, 6, 6, 0) 14%); }
+}

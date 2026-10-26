@@ -1,6 +1,6 @@
 /* Q-Detailing «Лак»: a WebGL pass over the hero film. The studio's hexagon lamps are already mirrored in the paint;
    near the cursor those reflections ignite and bloom, and only on the car: the car mask comes
-   from 12 rembg keyframes packed in media/h-u9-mask.png (4 x 3 tiles, 480 x 270 each, one per 10 film frames).
+   from 10 rembg keyframes packed in media/h-u9-mask.png (4 x 3 grid of 480 x 270 tiles, one per 10 film frames).
    If WebGL or the video texture is not available, the canvas removes itself and qceil.js draws the film. */
 (() => {
   const scene = document.querySelector('[data-ceil]');
@@ -9,7 +9,8 @@
   const video = scene.querySelector('video');
   const root = document.documentElement;
   const calm = root.classList.contains('calm');
-  const FWD = 112 / 30;   // the film runs forward for 112 frames, then plays back reversed
+  const FWD = 96 / 30;    // the film runs forward for 96 frames, then plays back reversed
+  const KEYS = 10;        // mask keyframes in the sprite, one per 10 frames
 
   const fail = () => { scene.dataset.gl = '0'; canvas.remove(); };
   let gl = null;
@@ -61,7 +62,7 @@ void main() {
   float wide = 1.0 - smoothstep(0.16, 0.46, hx);
 
   float a = uLight;
-  col *= mix(1.0, 0.4 + 0.6 * wide, a);                     // the rest of the studio falls into half-light
+  col *= mix(1.0, 0.66 + 0.34 * wide, a);                   // the rest of the hall falls into half-light (it is dark already)
   col *= 1.0 + 0.42 * a * pool * car;                       // details come up under the lamp
   vec3 cold = vec3(0.62, 0.84, 1.0), white = vec3(0.92, 0.97, 1.0);
   col += white * a * pool * car * hi * 0.45;                // the lamps' reflections ignite...
@@ -163,13 +164,13 @@ void main() {
     mx += (tx - mx) * (held ? 0.18 : 0.05); my += (ty - my) * (held ? 0.18 : 0.05);
     const t = video.currentTime || 0;
     const sfwd = t < FWD ? t : Math.max(0, 2 * FWD - t);
-    const fk = Math.min(11, Math.max(0, sfwd * 3));
+    const fk = Math.min(KEYS - 1, Math.max(0, sfwd * 3));
     const k0 = Math.floor(fk);
     gl.uniform2f(U.uRes, canvas.width, canvas.height);
     gl.uniform2f(U.uVid, video.videoWidth || 1920, video.videoHeight || 1080);
     gl.uniform2f(U.uMouse, mx, my);
     gl.uniform1f(U.uLight, light);
-    gl.uniform3f(U.uKey, k0, Math.min(11, k0 + 1), fk - k0);
+    gl.uniform3f(U.uKey, k0, Math.min(KEYS - 1, k0 + 1), fk - k0);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   };
   requestAnimationFrame(draw);

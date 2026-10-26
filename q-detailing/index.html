@@ -8,7 +8,6 @@
   <meta name="description" content="Керамика, защитная плёнка, полировка, антихром и шумоизоляция. Две студии в Москве. Концепт сайта.">
   <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/cormorant-italic-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="media/h-u9.mp4" as="video" type="video/mp4">
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="qdet.css">
@@ -25,7 +24,8 @@
 <div class="grain" aria-hidden="true"></div>
 <main class="page">
   <header class="ceil" id="top" data-ceil data-mask="media/h-u9-mask.png">
-    <video class="ceil__video" src="media/h-u9.mp4" poster="media/h-u9-poster.jpg" muted loop playsinline autoplay preload="auto" aria-label="Yangwang U9 сзади в студии Q-Detailing под шестиугольными лампами"></video>
+    <video class="ceil__video" poster="media/h-u9-poster.jpg" muted loop playsinline autoplay preload="auto" data-src-hd="media/h-u9-1440.mp4" data-src-md="media/h-u9-1080.mp4" data-src-sd="media/h-u9-720.mp4" aria-label="Yangwang U9 сзади в тёмном зале студии Q-Detailing"></video>
+    <script>(function(v){var px=innerWidth*(devicePixelRatio||1);v.src=v.dataset[px>=2000?'srcHd':px>=1100?'srcMd':'srcSd']})(document.currentScript.previousElementSibling)</script>
     <canvas class="ceil__gl" data-lac aria-hidden="true"></canvas>
     <canvas class="ceil__canvas" data-ceil-canvas aria-hidden="true"></canvas>
     <nav class="ceil__bar" aria-label="Разделы">
@@ -34,9 +34,8 @@
     </nav>
     <p class="ceil__hint" data-ceil-hint aria-hidden="true">Ведите курсором по машине</p>
     <div class="ceil__foot">
-      <p class="ceil__eyebrow">Детейлинг в Москве с 2010 года</p>
-      <h1 class="ceil__title" aria-label="Свет, в котором видно каждую деталь"><span class="ceil__lines" aria-hidden="true"><span class="w" style="--i:0">Свет,</span> <span class="w" style="--i:1">в котором</span> <span class="w" style="--i:2">видно</span><br><em><span class="w" style="--i:3">каждую</span> <span class="w" style="--i:4">деталь</span></em></span><span class="ceil__shine" aria-hidden="true"><span class="w" style="--i:0">Свет,</span> <span class="w" style="--i:1">в котором</span> <span class="w" style="--i:2">видно</span><br><em><span class="w" style="--i:3">каждую</span> <span class="w" style="--i:4">деталь</span></em></span></h1>
-      <p class="ceil__meta">Керамика, плёнка, полировка, антихром · две студии · ежедневно 8–22</p>
+      <h1 class="ceil__title" aria-label="Детейлинг уровня гиперкаров"><span class="ceil__lines" aria-hidden="true"><span class="w" style="--i:0">Детейлинг</span> <span class="w" style="--i:1">уровня</span><br><em><span class="w" style="--i:2">гиперкаров</span></em></span><span class="ceil__shine" aria-hidden="true"><span class="w" style="--i:0">Детейлинг</span> <span class="w" style="--i:1">уровня</span><br><em><span class="w" style="--i:2">гиперкаров</span></em></span></h1>
+      <p class="ceil__meta">Москва, с 2010 года · две студии · ежедневно 8–22</p>
       <div class="ceil__acts"><a class="button button--live" href="mailto:info@q-detailing.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C" data-magnet>Записаться</a><a class="link" href="#prices" data-magnet>Цена для вашей машины</a></div>
     </div>
   </header>
