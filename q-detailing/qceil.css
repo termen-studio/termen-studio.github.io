@@ -1,0 +1,42 @@
+/* Q-Detailing «Потолок Q»: one scene, the studio's hexagon ceiling lights the car */
+.ceil { position: relative; height: 100svh; min-height: 34rem; overflow: hidden; background: #050606; cursor: default; }
+.ceil__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }  /* stays under the canvas: the canvas draws it, and it shows on its own if the canvas cannot */
+.ceil__canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ceil::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(5, 6, 6, 0.88) 0%, rgba(5, 6, 6, 0.4) 26%, rgba(5, 6, 6, 0) 44%), linear-gradient(180deg, rgba(5, 6, 6, 0.6) 0%, rgba(5, 6, 6, 0) 16%); }
+.ceil__bar { position: absolute; z-index: 2; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem var(--m); }
+.ceil__mark { font-family: var(--display); font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; text-decoration: none; }
+.ceil__phone { text-decoration-color: transparent; color: rgba(238, 240, 238, 0.86); font-variant-numeric: tabular-nums; }
+.ceil__foot { position: absolute; z-index: 2; left: 50%; bottom: clamp(2rem, 5vh, 3.5rem); transform: translateX(-50%); width: min(100% - 2 * var(--m), 52rem); text-align: center; }
+.ceil__title { font-size: clamp(2.1rem, 0.9rem + 2.9vw, 4rem); line-height: 1; letter-spacing: -0.045em; font-weight: 600; text-wrap: balance; }
+.ceil__meta { margin-top: 0.9rem; color: rgba(238, 240, 238, 0.78); }
+.ceil__acts { margin-top: 1.6rem; display: flex; justify-content: center; align-items: center; gap: 1rem 1.75rem; flex-wrap: wrap; }
+.ceil__hint { position: absolute; z-index: 2; top: 5.2rem; left: 50%; transform: translateX(-50%); margin: 0; font-size: var(--step-small); color: rgba(238, 240, 238, 0.72); white-space: nowrap; transition: opacity 600ms ease; }
+.ceil__hint.is-gone { opacity: 0; }
+.motion .ceil__foot > * { animation: rise-in 900ms var(--ease-out) both; }
+.motion .ceil__foot > :nth-child(1) { animation-delay: 1500ms; }
+.motion .ceil__foot > :nth-child(2) { animation-delay: 1700ms; }
+.motion .ceil__foot > :nth-child(3) { animation-delay: 1850ms; }
+.motion .ceil__bar, .motion .ceil__hint { animation: rise-in 700ms var(--ease-out) 1200ms both; }
+
+/* prices: a quiet list, nothing shouts over the scene above */
+.qprice { padding: var(--section) var(--m); max-width: 64rem; margin: 0 auto; }
+.qprice__title { font-size: var(--step-head); line-height: 1; letter-spacing: -0.04em; text-align: center; }
+.qprice__lead { margin: 0.9rem auto 0; color: var(--muted); text-align: center; max-width: 40ch; }
+.qprice__list { list-style: none; margin: clamp(2rem, 4vw, 3rem) 0 0; padding: 0; }
+.qprice__row { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr) auto; align-items: baseline; gap: 1.25rem; padding: 1.15rem 0; border-top: 1px solid rgba(238, 240, 238, 0.12); }
+.qprice__row:last-child { border-bottom: 1px solid rgba(238, 240, 238, 0.12); }
+.qprice__name { font-family: var(--display); font-weight: 600; font-size: clamp(1.4rem, 1rem + 1vw, 2rem); letter-spacing: -0.03em; }
+.qprice__what { color: var(--muted); }
+.qprice__price { font-family: var(--display); font-weight: 500; font-size: clamp(1.15rem, 0.95rem + 0.6vw, 1.5rem); color: var(--live); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.qprice__acts { margin-top: 2.5rem; display: flex; justify-content: center; }
+.qcontact { padding: 0 var(--m) var(--section); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter); max-width: 64rem; margin: 0 auto; }
+.qcontact__card { padding: 1.75rem; border-radius: 6px; background: #121415; display: grid; gap: 0.5rem; }
+.qcontact__card h3 { font-size: 1.35rem; letter-spacing: -0.02em; }
+.qcontact__card p { color: var(--muted); }
+@media (max-width: 45em) {
+  .ceil__phone { display: none; }
+  .ceil__hint { top: 4.6rem; }
+  .qprice__row { grid-template-columns: minmax(0, 1fr) auto; }
+  .qprice__what { grid-column: 1 / -1; grid-row: 2; font-size: var(--step-small); }
+  .qcontact { grid-template-columns: minmax(0, 1fr); }
+}
