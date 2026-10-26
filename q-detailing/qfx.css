@@ -72,3 +72,57 @@ html.has-qcursor, html.has-qcursor a, html.has-qcursor button { cursor: none; }
   /* on a phone the film is cropped to the centre, so the plate sits right under the title: darken more of the frame */
   .ceil::after { background: linear-gradient(0deg, rgba(5, 6, 6, 0.96) 0%, rgba(5, 6, 6, 0.82) 38%, rgba(5, 6, 6, 0.35) 56%, rgba(5, 6, 6, 0) 70%), linear-gradient(180deg, rgba(5, 6, 6, 0.5) 0%, rgba(5, 6, 6, 0) 14%); }
 }
+
+/* ---------- lamps that light up every time they come into view, in both scroll directions ---------- */
+.motion .qprice__row.is-in::before { animation: none; }
+.motion .qprice__row.is-lit::before { animation: tube-on 1500ms var(--ease-out) both; animation-delay: calc(var(--n, 0) * 70ms); }
+.qcontact__card { position: relative; }
+.qcontact__card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: #e8f6ff; box-shadow: 0 0 12px 1px var(--live); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+.motion .qcontact__card.is-lit::before { animation: tube-on 1500ms var(--ease-out) both; }
+.motion .qcontact__card.is-lit:nth-child(2)::before { animation-delay: 120ms; }
+.qprice__title em, .qdis__title em { background: linear-gradient(100deg, var(--live) 42%, #ffffff 50%, var(--live) 58%) 100% 0 / 320% 100% no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent; }
+.motion .is-lit.qprice__title em, .motion .is-lit.qdis__title em { animation: em-glint 1600ms var(--ease-out) 150ms both; }
+@keyframes em-glint { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.qrun__sep { transition: filter 200ms linear; filter: drop-shadow(0 0 calc(var(--glow, 0) * 10px) rgba(143, 208, 255, calc(var(--glow, 0) * 1))); }
+.qrun__sep polygon { fill: rgba(143, 208, 255, calc(var(--glow, 0) * 0.55)); }
+
+/* ---------- «Разобрали гиперкар»: the U9 side with its panels off; a lamp runs along it as you scroll ---------- */
+.qdis { position: relative; height: 250vh; }
+.qdis__pin { position: sticky; top: 0; height: 100svh; display: grid; grid-template-rows: auto auto auto; align-content: center; row-gap: clamp(1.5rem, 3vh, 2.5rem); padding: 0 var(--m); overflow: hidden; }
+.qdis__head { text-align: center; }
+.qdis__kicker { font-size: var(--step-small); letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238, 240, 238, 0.6); }
+.qdis__title { margin-top: 0.8rem; font-weight: 200; font-size: clamp(2.2rem, 1rem + 3.4vw, 4.5rem); line-height: 1.02; letter-spacing: -0.035em; }
+.qdis__title em { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.12em; letter-spacing: -0.01em; }
+.qdis__stage { position: relative; width: min(100%, 100rem); margin: 0 auto; }
+.qdis__film { position: relative; aspect-ratio: 1920 / 680; }
+.qdis__film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.qdis__scan { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay;
+  background: linear-gradient(90deg, transparent calc(var(--p, 0) * 116% - 22%), rgba(226, 242, 255, 0.95) calc(var(--p, 0) * 116% - 8%), transparent calc(var(--p, 0) * 116% + 6%)); }
+.qdis__edge { position: absolute; top: 4%; bottom: 4%; left: calc(var(--p, 0) * 116% - 8%); width: 1px; pointer-events: none; background: linear-gradient(180deg, transparent, rgba(232, 246, 255, 0.55) 20%, rgba(232, 246, 255, 0.55) 80%, transparent); box-shadow: 0 0 14px 2px rgba(143, 208, 255, 0.35); opacity: 0.55; }
+.qdis__notes { list-style: none; margin: 0; padding: 0; }
+.qdis__note { position: absolute; left: var(--x); top: var(--y); display: flex; align-items: center; gap: 0; pointer-events: none; }
+.qdis__note[data-side="left"] { flex-direction: row-reverse; transform: translateX(-100%); }
+.qdis__note[data-side="left"] .qdis__dot { margin-right: -7px; }
+.qdis__dot { flex: none; width: 14px; height: 14px; margin-left: -7px; opacity: 0; transform: scale(0.4); transition: opacity 300ms ease, transform 400ms var(--ease-out); }
+.qdis__dot polygon { fill: var(--live); stroke: #e8f6ff; stroke-width: 1.5; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 6px var(--live)); }
+.qdis__line { flex: none; width: clamp(2.5rem, 5vw, 5rem); height: 1px; background: #e8f6ff; box-shadow: 0 0 10px 1px var(--live); transform: scaleX(0); transform-origin: 0 50%; transition: transform 500ms var(--ease-out) 120ms; }
+.qdis__note[data-side="left"] .qdis__line { transform-origin: 100% 50%; }
+.qdis__text { padding: 0.45rem 0.8rem; border-radius: 999px; background: rgba(8, 10, 11, 0.82); white-space: nowrap; font-size: clamp(0.85rem, 0.7rem + 0.35vw, 1.05rem); opacity: 0; transform: translateY(6px); transition: opacity 400ms ease 300ms, transform 500ms var(--ease-out) 300ms; }
+.qdis__note.is-on .qdis__dot { opacity: 1; transform: none; }
+.qdis__note.is-on .qdis__line { transform: none; animation: line-flash 1400ms ease-out 200ms both; }
+.qdis__note.is-on .qdis__text { opacity: 1; transform: none; }
+@keyframes line-flash { 0% { box-shadow: 0 0 0 0 var(--live); } 30% { box-shadow: 0 0 22px 4px var(--live); background: #ffffff; } 100% { box-shadow: 0 0 10px 1px var(--live); } }
+.qdis__caption { text-align: center; font-size: var(--step-small); color: rgba(238, 240, 238, 0.55); }
+.qdis__caption a { color: inherit; }
+@media (max-width: 45em) {
+  .qdis { height: 230vh; }
+  .qdis__film { aspect-ratio: 4 / 3; }
+  .qdis__film video { object-position: 38% 50%; }
+  .qdis__notes { position: static; display: grid; gap: 0.5rem; margin-top: 0.75rem; }
+  .qdis__pin { grid-template-rows: auto auto auto auto; }
+  .qdis__note, .qdis__note[data-side="left"] { position: static; transform: none; flex-direction: row; }
+  .qdis__note[data-side="left"] .qdis__dot { margin-right: 0; }
+  .qdis__line { width: 1.25rem; }
+  .qdis__note[data-side="left"] .qdis__line { transform-origin: 0 50%; }
+  .qdis__text { white-space: normal; }
+}

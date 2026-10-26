@@ -7,6 +7,7 @@
   /* ---------- Smooth wheel scrolling (Lenis): mouse only, off with reduced motion ---------- */
   if (motion && !calm && window.Lenis && matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const lenis = new Lenis({ autoRaf: true, lerp: 0.09, anchors: true });
+    window.__lenis = lenis;   // lets the screen recorder scroll through Lenis instead of fighting it
     if (!root.classList.contains('is-ready')) {
       lenis.stop();
       new MutationObserver((m, o) => { if (root.classList.contains('is-ready')) { o.disconnect(); lenis.start(); } }).observe(root, { attributes: true, attributeFilter: ['class'] });

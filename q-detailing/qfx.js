@@ -80,3 +80,62 @@
   };
   requestAnimationFrame(frame);
 })();
+
+/* Lamps that light up every time they come into view, the hexagons of the running line that flare as they pass the
+   middle of the screen, and the «Разобрали гиперкар» scene: a lamp runs along the car as you scroll, the notes light up */
+(() => {
+  const root = document.documentElement;
+  const calm = root.classList.contains('calm');
+
+  /* ---------- [data-flash]: replay the light each time the element comes into view, in both directions ---------- */
+  const flashIO = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.remove('is-lit');
+        void e.target.offsetWidth;   // restart the CSS animation
+        e.target.classList.add('is-lit');
+      } else e.target.classList.remove('is-lit');
+    }
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-flash]').forEach((el) => flashIO.observe(el));
+
+  /* ---------- running line: each hexagon flares as it passes the middle of the screen ---------- */
+  const track = document.querySelector('[data-run]');
+  const seps = track ? [...track.querySelectorAll('.qrun__sep')] : [];
+  let offs = [];
+  const measure = () => { offs = seps.map((s) => s.offsetLeft + s.offsetWidth / 2); };
+  measure();
+  addEventListener('resize', measure);
+  if (document.fonts) document.fonts.ready.then(measure);
+
+  /* ---------- the scene ---------- */
+  const dis = document.querySelector('[data-dis]');
+  const scan = dis && dis.querySelector('.qdis__film');
+  const notes = dis ? [...dis.querySelectorAll('.qdis__note')] : [];
+  let p = 0;
+
+  const frame = () => {
+    requestAnimationFrame(frame);
+    if (track && seps.length && !calm) {
+      const m = track.style.transform.match(/translate3d\((-?[\d.]+)px/);
+      const x = m ? parseFloat(m[1]) : 0, mid = innerWidth / 2;
+      for (let i = 0; i < seps.length; i++) {
+        const g = Math.max(0, 1 - Math.abs(offs[i] + x - mid) / 260);
+        seps[i].style.setProperty('--glow', g.toFixed(2));
+      }
+    }
+    if (dis) {
+      const b = dis.getBoundingClientRect();
+      const target = Math.min(1, Math.max(0, -b.top / Math.max(1, b.height - innerHeight)));
+      p += (target - p) * (calm ? 1 : 0.12);
+      scan.style.setProperty('--p', p.toFixed(4));
+      for (const n of notes) {
+        const on = p >= +n.dataset.at;
+        if (on !== n.classList.contains('is-on')) {
+          n.classList.toggle('is-on', on);   // lights again on every pass, both directions
+        }
+      }
+    }
+  };
+  requestAnimationFrame(frame);
+})();
