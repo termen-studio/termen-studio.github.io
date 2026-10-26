@@ -85,7 +85,7 @@
     const clips = [...hero.querySelectorAll('[data-clip]')];
     const power = hero.querySelector('[data-power]');
     const film = hero.querySelector('.hero__film');
-    const cap = hero.querySelector('[data-cap]');
+    const cap = hero.querySelector('.hero__caption [data-cap]');  // the clips carry data-cap too
     const tc = hero.querySelector('[data-tc]');
     const rows = { 1: hero.querySelector('[data-in="1"]'), 2: hero.querySelector('[data-in="2"]') };
     const STATE = { on: ['is-on', 'в работе'], off: ['is-off', 'нет напряжения'], switch: ['is-switch', 'переключение'], standby: ['', 'резерв'] };
