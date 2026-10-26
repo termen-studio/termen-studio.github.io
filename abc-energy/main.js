@@ -50,7 +50,7 @@
         lamp2.classList.toggle('is-on', shown >= 1);
       } else {
         const maxV = +intro.dataset.max || 400;
-        volt.textContent = String(Math.round(ease(shown) * maxV)).padStart(String(maxV).length, '0');
+        volt.textContent = String(Math.round(ease(shown) * maxV)).padStart(intro.dataset.pad === 'none' ? 0 : String(maxV).length, '0');  // data-pad="none": no leading zeros (percent)
         lamp1.classList.toggle('is-on', shown > 0.55);
         lamp2.classList.toggle('is-on', shown >= 1);
       }

@@ -1,0 +1,28 @@
+/* Q-Detailing: the blue-white of the studio's hexagon ceiling lights replaces lamp green */
+:root { --live: #8fd0ff; --live-soft: rgba(143, 208, 255, 0.55); }
+
+/* Intro: hexagon lamps light up one by one, like the ceiling in their studio */
+.intro__lamps { display: none; }
+.hexes { display: block; width: clamp(11rem, 26vw, 17rem); height: auto; margin: 0 auto 1.5rem; overflow: visible; }
+.hexes path { fill: rgba(232, 246, 255, 0); stroke: rgba(238, 240, 238, 0.22); stroke-width: 1.5; }
+.motion .hexes path { animation: hex-on 520ms var(--ease-out) both; animation-delay: calc(200ms + var(--i) * 140ms); }
+@keyframes hex-on {
+  from { fill: rgba(232, 246, 255, 0); stroke: rgba(238, 240, 238, 0.22); }
+  to { fill: rgba(232, 246, 255, 0.92); stroke: #ffffff; filter: drop-shadow(0 0 10px rgba(143, 208, 255, 0.85)); }
+}
+
+/* Price board with tall phone clips: the film stands on the right, the list on the left */
+.board--tall .board__film { left: auto; width: min(40%, 34rem); }
+.board--tall .board__scrim { background: linear-gradient(90deg, rgba(5, 6, 6, 0.9) 0%, rgba(5, 6, 6, 0) 30%), linear-gradient(0deg, rgba(5, 6, 6, 0.6) 0%, rgba(5, 6, 6, 0) 30%); }
+.board--tall .board__list { max-width: calc(60% - 2rem); }
+.board--tall .board__link { grid-template-columns: 1.25rem minmax(0, 15rem) minmax(0, 1fr) auto; }
+.board--tall .board__name { font-size: clamp(1.5rem, 0.9rem + 1.5vw, 2.5rem); }
+@media (max-width: 45em) {
+  .board--tall .board__film { width: 100%; }
+  .board--tall .board__list { max-width: none; }
+  .board--tall .board__link { grid-template-columns: 1rem minmax(0, 1fr) auto; }
+  .board--tall .board__scrim { background: linear-gradient(180deg, rgba(5, 6, 6, 0.7) 0%, rgba(5, 6, 6, 0.9) 100%); }
+}
+
+/* the "g" of the fitted wordmark needs room for its descender */
+.foot__mark { line-height: 1.04; padding-bottom: 0.04em; }
