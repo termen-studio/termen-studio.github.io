@@ -15,6 +15,7 @@
   <script>var d=document.documentElement;d.classList.add('js');d.classList.add('motion');if(matchMedia('(prefers-reduced-motion: reduce)').matches&&!/[?&]motion=1/.test(location.search))d.classList.add('calm');setTimeout(function(){d.classList.add('is-ready')},3500)</script>
   <script src="lenis.min.js" defer></script>
   <script src="main.js" defer></script>
+  <script src="qdet.js" defer></script>
 </head>
 <body>
 <div class="intro" aria-hidden="true" data-max="100" data-pad="none">
@@ -29,29 +30,28 @@
 </div>
 <div class="grain" aria-hidden="true"></div>
 <main class="page">
-  <header class="hero hero--tri" id="top" data-hero>
-    <div class="hero__film" aria-hidden="true">
-      <div class="tri__panel"><video src="media/t-mas.mp4" poster="media/t-mas-poster.jpg" muted loop playsinline autoplay preload="auto" data-loop data-hero-video></video><p class="tri__label">Керамика</p></div>
-      <div class="tri__panel"><video src="media/t-cls.mp4" poster="media/t-cls-poster.jpg" muted loop playsinline autoplay preload="auto" data-loop></video><p class="tri__label">AMG CLS 53</p></div>
-      <div class="tri__panel"><video src="media/t-anti.mp4" poster="media/t-anti-poster.jpg" muted loop playsinline autoplay preload="auto" data-loop></video><p class="tri__label">Антихром</p></div>
-      <div class="hero__scrim"></div>
-    </div>
+  <header class="hero qhero" id="top" data-hero>
     <nav class="bar" aria-label="Разделы">
       <a class="bar__mark" href="#top">Q-Detailing</a>
       <ul class="bar__links">
+        <li><a class="link" href="#map">Защита</a></li>
+        <li><a class="link" href="#works">Работы</a></li>
         <li><a class="link" href="#catalog">Цены</a></li>
-        <li><a class="link" href="#u9">Работы</a></li>
         <li><a class="link" href="#contact">Контакты</a></li>
       </ul>
       <a class="button bar__action" href="mailto:info@q-detailing.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C">Записаться</a>
     </nav>
-    <div class="hero__foot">
-      <h1 class="hero__title lines"><span class="line"><span data-line style="--i:0">Снова</span></span><span class="line"><span data-line style="--i:1">как новая</span></span></h1>
-      <div class="hero__aside">
-        <p class="hero__lead" data-load style="--d:480ms">Детейлинг в Москве с 2010 года: керамика, защитная плёнка, полировка, антихром и шумоизоляция. Две студии, каждый день с 8 до 22.</p>
-        <div class="hero__actions" data-load style="--d:600ms"><a class="button" href="mailto:info@q-detailing.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C">Записаться</a><a class="link hero__more" href="#catalog">Цены на услуги</a></div>
-      </div>
-      <p class="hero__caption" data-load style="--d:760ms"><span>Кадры из студии Q-Detailing</span><span>Москва</span></p>
+    <div class="qhero__text">
+      <h1 class="qhero__title lines"><span class="line"><span data-line style="--i:0">Посветите</span></span><span class="line"><span data-line style="--i:1">на лак</span></span></h1>
+      <p class="qhero__lead" data-load style="--d:480ms">Так выглядит кузов после полировки и керамики в нашей студии. Детейлинг в Москве с 2010 года: две студии, каждый день с 8 до 22.</p>
+      <div class="qhero__actions" data-load style="--d:600ms"><a class="button button--live" href="mailto:info@q-detailing.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C">Записаться</a><a class="link" href="#catalog">Цены на услуги</a></div>
+    </div>
+    <div class="qhero__stage" data-polish>
+      <video class="qhero__before" src="media/t-mas.mp4" poster="media/t-mas-poster.jpg" muted loop playsinline autoplay preload="auto" data-loop data-hero-video aria-hidden="true"></video>
+      <div class="qhero__after" data-polish-after><video src="media/t-mas.mp4" poster="media/t-mas-poster.jpg" muted loop playsinline autoplay preload="auto" data-loop aria-label="Синий Maserati Levante в керамике, в лаке отражаются шестиугольные лампы студии"></video></div>
+      <svg class="qhero__ring" data-polish-ring viewBox="0 0 200 200" aria-hidden="true"><polygon points="100,200 13.4,150 13.4,50 100,0 186.6,50 186.6,150"/></svg>
+      <p class="qhero__hint" data-polish-hint>Ведите курсором</p>
+      <p class="qhero__tag">Maserati Levante, керамика</p>
     </div>
   </header>
 
@@ -63,6 +63,59 @@
       <div data-reveal><dt>8–22</dt><dd>каждый день, без выходных</dd></div>
       <div data-reveal><dt>Гарантия</dt><dd>пожизненная, на весь кузовной ремонт</dd></div>
     </dl>
+  </section>
+
+  <section class="qmap" id="map" aria-labelledby="map-title" data-map>
+    <div class="qmap__head">
+      <h2 class="qmap__title is-wired" id="map-title" data-node>Что защитим на вашей машине</h2>
+      <p class="qmap__lead">Нажмите на точку — покажем, чем закрываем эту зону и сколько это стоит.</p>
+    </div>
+    <div class="qmap__frame">
+      <img src="media/u9-map.jpg" alt="Yangwang U9 сзади в студии Q-Detailing" width="1920" height="1114" loading="lazy">
+      <button class="qmap__dot is-on" type="button" style="--x:79.7%;--y:73.3%" data-spot="0" data-zone="Кузов" data-what="Керамика на весь кузов" data-price="от 24 000 ₽" data-side="left" aria-label="Кузов: керамика на весь кузов, от 24 000 ₽"></button>
+      <button class="qmap__dot" type="button" style="--x:30.7%;--y:59.4%" data-spot="1" data-zone="Фонари и фары" data-what="Защитная плёнка" data-price="от 3 600 ₽" data-side="right" aria-label="Фонари и фары: защитная плёнка, от 3 600 ₽"></button>
+      <button class="qmap__dot" type="button" style="--x:51.4%;--y:42.2%" data-spot="2" data-zone="Стёкла" data-what="Защитная плёнка" data-price="от 2 040 ₽" data-side="right" aria-label="Стёкла: защитная плёнка, от 2 040 ₽"></button>
+      <button class="qmap__dot" type="button" style="--x:52.6%;--y:83.3%" data-spot="3" data-zone="Бампер" data-what="Защитная плёнка" data-price="от 6 000 ₽" data-side="right" aria-label="Бампер: защитная плёнка, от 6 000 ₽"></button>
+      <div class="qmap__tip" data-tip style="--x:79.7%;--y:73.3%" data-side="left" aria-hidden="true"><b data-tip-zone>Кузов</b><span data-tip-what>Керамика на весь кузов</span>, <i data-tip-price>от 24 000 ₽</i></div>
+    </div>
+    <ul class="qmap__legend">
+      <li class="qmap__item is-on" data-spot="0"><b>Кузов</b><span>Керамика на весь кузов</span><span class="qmap__price">от 24 000 ₽</span></li>
+      <li class="qmap__item" data-spot="1"><b>Фонари и фары</b><span>Защитная плёнка</span><span class="qmap__price">от 3 600 ₽</span></li>
+      <li class="qmap__item" data-spot="2"><b>Стёкла</b><span>Защитная плёнка</span><span class="qmap__price">от 2 040 ₽</span></li>
+      <li class="qmap__item" data-spot="3"><b>Бампер</b><span>Защитная плёнка</span><span class="qmap__price">от 6 000 ₽</span></li>
+    </ul>
+  </section>
+
+  <section class="qworks" id="works" aria-labelledby="works-title" data-works>
+    <h2 class="qworks__title is-wired" id="works-title" data-node>Работы</h2>
+    <p class="qworks__big" aria-hidden="true" data-works-big>YANGWANG U9</p>
+    <ol class="qworks__row">
+      <li class="qworks__card is-on" data-big="YANGWANG U9" data-reveal>
+        <video src="media/w-u9.mp4" poster="media/w-u9-poster.jpg" muted loop playsinline preload="metadata" aria-label="Yangwang U9"></video>
+        <h3 class="qworks__name">Yangwang U9</h3>
+        <p class="qworks__text">Разобрали спорткар из карбона и собрали без следов ремонта.</p>
+        <a class="link qworks__link" href="https://rutube.ru/video/044656848bb55ecfe429cb2d51e1ec66/" target="_blank" rel="noopener">Видео, 11 минут</a>
+      </li>
+      <li class="qworks__card" data-big="MASERATI" data-reveal>
+        <video src="media/b-ceramic.mp4" poster="media/b-ceramic-poster.jpg" muted loop playsinline preload="metadata" aria-label="Maserati Levante"></video>
+        <h3 class="qworks__name">Maserati Levante</h3>
+        <p class="qworks__text">Керамика. Лак под шестиугольными лампами студии.</p>
+        <a class="link qworks__link" href="https://rutube.ru/video/7184c6f4ef1330c1fd401cfe57cd7749/" target="_blank" rel="noopener">Видео</a>
+      </li>
+      <li class="qworks__card" data-big="AMG CLS 53" data-reveal>
+        <video src="media/t-cls.mp4" poster="media/t-cls-poster.jpg" muted loop playsinline preload="metadata" aria-label="Mercedes-AMG CLS 53"></video>
+        <h3 class="qworks__name">Mercedes-AMG CLS 53</h3>
+        <p class="qworks__text">Красавец-CLS в спортивном исполнении от AMG.</p>
+        <a class="link qworks__link" href="https://rutube.ru/video/22e12e9b97540a434cd8ed49b0aa7a3a/" target="_blank" rel="noopener">Видео</a>
+      </li>
+      <li class="qworks__card" data-big="АНТИХРОМ" data-reveal>
+        <video src="media/t-anti.mp4" poster="media/t-anti-poster.jpg" muted loop playsinline preload="metadata" aria-label="Антихром"></video>
+        <h3 class="qworks__name">Антихром</h3>
+        <p class="qworks__text">Маскируем или удаляем хром с элементов кузова.</p>
+        <a class="link qworks__link" href="https://rutube.ru/video/bb37d84db784fb8f7e19f05960a53d82/" target="_blank" rel="noopener">Видео</a>
+      </li>
+    </ol>
+    <p class="qworks__more"><a class="link" href="https://rutube.ru/channel/57483521/" target="_blank" rel="noopener">Все видео на Rutube</a></p>
   </section>
 
   <section class="board board--tall" id="catalog" aria-labelledby="board-title" data-board>
@@ -88,31 +141,6 @@
     <p class="board__cap"><span data-board-cap>Mercedes-AMG CLS 53 в студии</span></p>
   </section>
 
-  <div class="chapters">
-    <section class="chapter" id="u9" data-chapter aria-labelledby="ch-u9">
-      <div class="chapter__inner">
-        <video class="chapter__video" src="media/c-u9.mp4" poster="media/c-u9-poster.jpg" muted loop playsinline autoplay preload="metadata" style="object-position:50% 50%" aria-label="Фара красного спорткара Yangwang U9 крупным планом" data-loop></video>
-        <div class="chapter__scrim" aria-hidden="true"></div>
-        <div class="chapter__content">
-          <h2 class="chapter__title" id="ch-u9" data-node>Даже Yangwang U9</h2>
-          <p class="chapter__text">Уникальный спорткар с кузовом из карбона. Сняли почти все навесные элементы и собрали так, что следов ремонта не видно.</p>
-          <a class="chapter__link link" href="https://rutube.ru/video/044656848bb55ecfe429cb2d51e1ec66/" target="_blank" rel="noopener">Видео: полностью разобрали Yangwang U9, 11 минут</a>
-        </div>
-      </div>
-    </section>
-    <section class="chapter" id="studios" data-chapter aria-labelledby="ch-studios">
-      <div class="chapter__inner">
-        <video class="chapter__video" src="media/c-wheel.mp4" poster="media/c-wheel-poster.jpg" muted loop playsinline autoplay preload="metadata" style="object-position:50% 50%" aria-label="Мастер в перчатках снимает колесо со спорткара" data-loop></video>
-        <div class="chapter__scrim" aria-hidden="true"></div>
-        <div class="chapter__content">
-          <h2 class="chapter__title" id="ch-studios" data-node>Две студии в Москве</h2>
-          <p class="chapter__text">Севастопольский проспект, 95Б и улица Лобненская, 17 на Дмитровке. Каждый день с 8 до 22.</p>
-          <a class="chapter__link link" href="#contact">Адреса и телефоны</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <section class="visit" id="contact" aria-labelledby="visit-title">
     <img class="visit__photo" src="media/q-logo.jpg" alt="Логотип Q-Detailing в студии" width="1920" height="1080" loading="lazy">
     <div class="visit__card">
@@ -122,7 +150,7 @@
       <table class="visit__hours">
         <tr><th scope="row">Каждый день</th><td>8:00–22:00</td></tr>
       </table>
-      <a class="button visit__action" href="mailto:info@q-detailing.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C">Написать на info@q-detailing.ru</a>
+      <a class="button button--live visit__action" href="mailto:info@q-detailing.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C">Написать на info@q-detailing.ru</a>
     </div>
   </section>
   <svg class="cable" aria-hidden="true" data-cable><path class="cable__base" d=""/><path class="cable__live" d=""/><g class="cable__nodes"></g><circle class="cable__spark" r="3.5" cx="-20" cy="-20"/></svg>

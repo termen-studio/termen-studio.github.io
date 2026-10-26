@@ -26,3 +26,80 @@
 
 /* the "g" of the fitted wordmark needs room for its descender */
 .foot__mark { line-height: 1.04; padding-bottom: 0.04em; }
+
+/* ---------- v2 first screen: text on a calm panel, the polishing light on the right ---------- */
+.qhero { grid-template-columns: minmax(0, 40%) minmax(0, 1fr); grid-template-rows: auto 1fr; padding: 0; background: var(--bg); }
+.qhero .bar { grid-column: 1 / -1; grid-row: 1; padding: 0 var(--m); }
+.qhero .bar__links a { text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6); }
+.qhero__text { grid-column: 1; grid-row: 2; align-self: end; position: relative; z-index: 2; padding: 0 var(--m) clamp(2.25rem, 5vw, 4.5rem); }
+.qhero__title { font-size: clamp(3.5rem, 1rem + 5.4vw, 7rem); line-height: 0.9; letter-spacing: -0.055em; font-weight: 600; }
+.qhero__lead { margin-top: 1.5rem; max-width: 34ch; color: rgba(238, 240, 238, 0.86); hyphens: manual; }
+.qhero__actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
+.button--live { background: var(--live); color: #061018; min-height: 3.5rem; padding: 0 2.25rem; font-size: 1.125rem; box-shadow: 0 0 0 0 var(--live-soft); transition: box-shadow 300ms ease, transform 160ms ease; }
+@media (hover: hover) and (pointer: fine) { .button--live:hover { box-shadow: 0 0 28px 2px var(--live-soft); } }
+.qhero__stage { grid-column: 2; grid-row: 1 / 3; position: relative; overflow: hidden; touch-action: pan-y; background: #050606; }
+.qhero__stage::before { content: ""; position: absolute; inset: 0 0 auto; height: 7rem; z-index: 2; background: linear-gradient(180deg, rgba(5, 6, 6, 0.7), rgba(5, 6, 6, 0)); pointer-events: none; }
+.qhero__stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.qhero__before { filter: saturate(0.06) brightness(0.42) contrast(0.72) blur(2px); transform: scale(1.03); }
+.qhero__after { position: absolute; inset: 0; will-change: clip-path; clip-path: polygon(50% 20%, 50% 20%, 50% 20%, 50% 20%, 50% 20%, 50% 20%); }
+.qhero__ring { position: absolute; left: 0; top: 0; width: 10px; height: 10px; overflow: visible; pointer-events: none; filter: drop-shadow(0 0 12px var(--live)); }
+.qhero__ring polygon { fill: none; stroke: #e8f6ff; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.qhero__hint, .qhero__tag { position: absolute; bottom: 1.5rem; z-index: 2; margin: 0; font-size: var(--step-small); color: rgba(238, 240, 238, 0.8); }
+.qhero__hint { left: 1.5rem; }
+.qhero__tag { right: var(--m); }
+.motion:not(.is-ready) .qhero [data-line] { transform: translateY(110%); }
+.motion:not(.is-ready) .qhero [data-load] { opacity: 0; transform: translateY(14px); }
+
+/* ---------- protection map: dots with prices on the U9 ---------- */
+.qmap { padding: var(--section) var(--m) var(--section) calc(var(--m) * 1.6); }
+.qmap__head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 1rem; align-items: end; }
+.qmap__title { grid-column: 1 / 8; font-size: var(--step-head); line-height: 0.98; letter-spacing: -0.04em; }
+.qmap__lead { grid-column: 9 / 13; color: var(--muted); max-width: 32ch; }
+.qmap__frame { position: relative; margin-top: clamp(2rem, 4vw, 3rem); aspect-ratio: 1920 / 1114; border-radius: 6px; overflow: hidden; }
+.qmap__frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.qmap__dot { position: absolute; left: var(--x); top: var(--y); width: 1.25rem; height: 1.25rem; margin: -0.625rem 0 0 -0.625rem; padding: 0; border: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 0.4rem rgba(255, 255, 255, 0.25), 0 0 1.2rem 0.3rem var(--live-soft); cursor: pointer; }
+.qmap__dot::after { content: ""; position: absolute; inset: -0.4rem; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.7); opacity: 0; }
+.motion .qmap__dot::after { animation: dot-ping 2.4s var(--ease-out) infinite; }
+.qmap__dot:nth-of-type(2)::after { animation-delay: 0.6s; } .qmap__dot:nth-of-type(3)::after { animation-delay: 1.2s; } .qmap__dot:nth-of-type(4)::after { animation-delay: 1.8s; }
+@keyframes dot-ping { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(2.4); opacity: 0; } }
+.qmap__dot.is-on { background: var(--live); }
+.qmap__tip { position: absolute; left: var(--x); top: var(--y); z-index: 2; transform: translate(1.4rem, -50%); background: rgba(8, 10, 11, 0.94); padding: 0.85rem 1.1rem; border-radius: 10px; max-width: 18rem; font-size: 0.95rem; line-height: 1.4; pointer-events: none; transition: left 350ms var(--ease-out), top 350ms var(--ease-out); }
+.qmap__tip[data-side="left"] { transform: translate(calc(-100% - 1.4rem), -50%); }
+.qmap__tip b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.02em; }
+.qmap__tip i { font-style: normal; color: var(--live); white-space: nowrap; }
+.qmap__legend { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gutter); }
+.qmap__item { padding-top: 1rem; box-shadow: inset 0 2px 0 var(--surface-2); color: var(--muted); cursor: pointer; transition: color 250ms ease, box-shadow 250ms ease; display: grid; gap: 0.2rem; }
+.qmap__item b { font-family: var(--display); font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--ink); }
+.qmap__item.is-on { box-shadow: inset 0 2px 0 var(--live); color: var(--ink); }
+.qmap__price { font-variant-numeric: tabular-nums; }
+.qmap__item.is-on .qmap__price { color: var(--live); }
+
+/* ---------- works: tall cards, the car's name drawn huge behind them ---------- */
+.qworks { position: relative; isolation: isolate; overflow: clip; padding: var(--section) var(--m) var(--section) calc(var(--m) * 1.6); }
+.qworks__title { font-size: var(--step-head); line-height: 0.98; letter-spacing: -0.04em; }
+.qworks__big { margin: clamp(1.5rem, 3vw, 2.5rem) 0 0 -0.04em; font-family: var(--display); font-weight: 600; font-size: clamp(4rem, 1rem + 10vw, 13rem); line-height: 0.82; letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 1.5px rgba(238, 240, 238, 0.5); white-space: nowrap; pointer-events: none; transition: opacity 300ms ease; }
+.qworks__row { list-style: none; margin: clamp(2rem, 4vw, 3.25rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gutter); }
+.qworks__card { cursor: pointer; }
+.qworks__card video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 6px; background: #050606; filter: grayscale(0.7) brightness(0.62); transition: filter 450ms ease; }
+.qworks__card.is-on video { filter: none; }
+.qworks__name { margin-top: 1.1rem; font-size: 1.375rem; letter-spacing: -0.02em; }
+.qworks__text { margin-top: 0.4rem; color: var(--muted); max-width: 30ch; }
+.qworks__link { display: inline-block; margin-top: 0.6rem; }
+.qworks__more { margin-top: 2rem; }
+
+@media (max-width: 45em) {
+  .qhero { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 56svh auto; }
+  .qhero__stage { grid-column: 1; grid-row: 1 / 3; }
+  .qhero__text { grid-row: 3; padding-top: 1.75rem; }
+  .qhero__tag { display: none; }
+  .qmap { padding-left: var(--m); }
+  .qmap__title, .qmap__lead { grid-column: 1 / -1; }
+  .qmap__tip { display: none; }
+  .qmap__legend { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+  .qworks { padding-left: var(--m); }
+  .qworks__row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 68vw; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.5rem; }
+  .qworks__card { scroll-snap-align: start; }
+}
+
+/* the bar must sit above the stage, whose top gradient would otherwise dim the links */
+.qhero .bar { z-index: 3; }
