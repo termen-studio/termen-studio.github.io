@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Лепота — эко-отель в 80 км от Москвы · концепт</title>
+<link rel="preload" href="media/hero-mini.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=6">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": { "src": "media/hero-mini.jpg", "w": 1920, "h": 1080, "focusX": 0.55, "focusY": 0.5 },
+  "weather": { "lat": 56.594, "lon": 37.533, "name": "в Лепоте" },
+  "places": [
+    { "x": 620, "y": 432, "title": "34 коттеджа из сруба", "text": "Отдельные дома из натурального дерева: русский сруб снаружи, современная планировка внутри.", "icon": "house" },
+    { "x": 1300, "y": 450, "title": "Бассейн с морской водой", "text": "Летний бассейн с лежаками и закрытой VIP-зоной.", "icon": "swim" },
+    { "x": 1018, "y": 590, "title": "Спортивный корт", "text": "Один из 30 с лишним видов отдыха — от рыбалки на Дубне до сплава на каяках.", "icon": "racket" }
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero-mini.jpg" alt="Эко-отель «Лепота» с высоты: коттеджи, бассейн и корт среди леса" width="1920" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Лепота<small>эко-отель</small></div>
+    <a href="#">Коттеджи</a><a href="#">Номера</a><a href="#">Бани</a><a href="#">СПА</a><a href="#">Рестораны</a>
+    <a class="tel" href="tel:+74950216744">+7 495 021-67-44</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Эко-отель в 80&nbsp;км от Москвы · берег Дубны</div>
+    <h1>Лепота <em>целиком</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>в ноябре от 11&nbsp;000&nbsp;₽</span></a>
+  </div>
+
+</section>
+
+<script src="hotel.js?r=5"></script>
+</body>
+</html>

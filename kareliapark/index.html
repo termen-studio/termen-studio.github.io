@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Карелия Парк — база отдыха на берегу Ладоги · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 1299, "h": 1080, "focusX": 0.5, "focusY": 0.3},
+  "weather": {"lat": 61.66, "lon": 31.17, "name": "в «Карелия Парке»"},
+  "places": [
+    {"x": 160, "y": 540, "title": "Гамак и мангал у каждого дома", "icon": "fire"},
+    {"x": 693, "y": 476, "title": "Терраса, камин и Wi-Fi", "icon": "house"},
+    {"x": 1082, "y": 476, "title": "Сауна в каждом доме", "icon": "steam"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="База отдыха «Карелия Парк»: три дома с террасами и гамаками на закате" width="1299" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Карелия Парк<small>база отдыха</small></div>
+    <a href="#">Дома</a><a href="#">Кемпинг</a><a href="#">Катера</a><a href="#">Развлечения</a><a href="#">Как добраться</a>
+    <a class="tel" href="tel:+79212213968">+7 921 221-39-68</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · Ладожские шхеры, Карелия</div>
+    <h1>Свой дом <em>у Ладоги</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>минута до пирса</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ильинский пляж — база отдыха на Можайском море · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2223, "h": 1080, "focusX": 0.5, "focusY": 0.5},
+  "weather": {"lat": 55.55, "lon": 35.93, "name": "на Ильинском пляже"},
+  "places": [
+    {"x": 900, "y": 655, "title": "Прокат моторных лодок", "icon": "boat"},
+    {"x": 1200, "y": 700, "title": "Яхта и катамараны", "icon": "sail"},
+    {"x": 1655, "y": 585, "title": "Песчаный пляж со спасателями", "icon": "beach"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="База отдыха «Ильинский пляж»: лодки и катамаран на Можайском море, пляж со спасательной вышкой" width="2223" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Ильинский пляж<small>база отдыха</small></div>
+    <a href="#">Домики</a><a href="#">Коттеджи</a><a href="#">Бани</a><a href="#">Прокат</a><a href="#">Пляж</a>
+    <a class="tel" href="tel:+79269921313">+7 926 992-13-13</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · 100&nbsp;км от Москвы по Минскому шоссе</div>
+    <h1>Берег <em>Можайского моря</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>есть баня-корабль на воде</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Березовая роща — эко-отель в 45 км от МКАД · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 1620, "h": 1080, "focusX": 0.5, "focusY": 0.5},
+  "weather": {"lat": 56.24, "lon": 37.52, "name": "в «Березовой роще»"},
+  "places": [
+    {"x": 330, "y": 640, "title": "Аллеи через лес", "icon": "tree"},
+    {"x": 760, "y": 470, "title": "15 деревянных домиков", "icon": "house"},
+    {"x": 1150, "y": 470, "title": "Сауна в десяти из них", "icon": "steam"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Эко-отель «Березовая роща»: деревянные домики вдоль аллеи в лесу" width="1620" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Березовая роща<small>эко-отель</small></div>
+    <a href="#">Проживание</a><a href="#">Ресторан</a><a href="#">Территория</a><a href="#">Мероприятия</a><a href="#">Акции</a>
+    <a class="tel" href="tel:+79032649918">+7 903 264-99-18</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Эко-отель · 45&nbsp;км от МКАД по Дмитровскому шоссе</div>
+    <h1>Домики <em>в лесу</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>домик от 3&nbsp;300&nbsp;₽ в сутки</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>

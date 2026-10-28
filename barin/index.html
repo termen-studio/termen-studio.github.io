@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Загородный клуб «Барин» — 40 км от МКАД · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": { "src": "media/hero.jpg", "w": 2278, "h": 1080, "focusX": 0.6, "focusY": 0.5 },
+  "weather": { "lat": 55.98, "lon": 38.12, "name": "в «Барине»" },
+  "places": [
+    { "x": 520, "y": 560, "title": "Номера и таунхаусы", "icon": "house" },
+    { "x": 1363, "y": 640, "title": "Свадьбы на лужайке", "icon": "rings" },
+    { "x": 2010, "y": 690, "title": "Открытый бассейн", "icon": "swim" }
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Загородный клуб «Барин»: номера, лужайка со свадебной аркой и бассейн среди сосен" width="2278" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Барин<small>загородный клуб</small></div>
+    <a href="#">Отель</a><a href="#">Бани</a><a href="#">Свадьбы</a><a href="#">Корпоративы</a><a href="#">Ресторан</a>
+    <a class="tel" href="tel:+79857698833">+7 985 769-88-33</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Загородный клуб · 40&nbsp;км от МКАД по Щёлковскому шоссе</div>
+    <h1>Свой праздник <em>среди сосен</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Оставить заявку<span>банкет от 5&nbsp;000&nbsp;₽ на гостя</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>

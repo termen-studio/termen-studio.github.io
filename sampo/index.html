@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Глэмпинг Сампо — Карелия, на берегу озера · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2410, "h": 1080, "focusX": 0.5, "focusY": 0.5},
+  "weather": {"lat": 61.97, "lon": 34.14, "name": "в «Сампо»"},
+  "places": [
+    {"x": 467, "y": 540, "title": "Места под палатки", "icon": "tent"},
+    {"x": 1280, "y": 560, "title": "Лоджи и шатры в лесу", "icon": "glass"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Глэмпинг «Сампо»: лодж с террасой и гирляндами в карельском лесу" width="2410" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Сампо<small>глэмпинг</small></div>
+    <a href="#">Лодж</a><a href="#">Мята</a><a href="#">Шатры</a><a href="#">Гриль-домик</a><a href="#">Баня и чан</a>
+    <a class="tel" href="tel:+79110522196">+7 911 052-21-96</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Глэмпинг в Карелии · на берегу озера</div>
+    <h1>Тихая <em>Карелия</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>лоджи, шатры, баня и чан</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>
