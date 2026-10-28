@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель «Прибрежный Ярбург» — 21 км от Ярославля · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2356, "h": 1080, "focusX": 0.45, "focusY": 0.5},
+  "weather": {"lat": 57.69, "lon": 40.05, "name": "в «Ярбурге»"},
+  "places": [
+    {"x": 480, "y": 635, "title": "Коттеджи на территории", "icon": "house"},
+    {"x": 1801, "y": 590, "title": "Купол для праздников", "icon": "rings"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Парк-отель «Прибрежный Ярбург»: белый купол для праздников и коттеджи среди елей" width="2356" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Прибрежный Ярбург<small>парк-отель</small></div>
+    <a href="#">Номера</a><a href="#">Шатёр</a><a href="#">Рестораны</a><a href="#">Свадьбы</a><a href="#">Акции</a>
+    <a class="tel" href="tel:+79201338260">+7 920 133-82-60</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Парк-отель · 21&nbsp;км от Ярославля, Введенье</div>
+    <h1>Праздник <em>под куполом</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Оставить заявку<span>15 минут от Ярославля</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>
