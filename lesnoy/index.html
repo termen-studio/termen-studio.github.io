@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель Lesnoy — 37 км от Москвы · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 1619, "h": 1080, "focusX": 0.4, "focusY": 0.5},
+  "weather": {"lat": 56.07, "lon": 37.07, "name": "в «Лесном»"},
+  "places": [
+    {"x": 300, "y": 470, "title": "Сауны и хаммам", "icon": "steam"},
+    {"x": 225, "y": 730, "title": "Открытый бассейн", "icon": "swim"},
+    {"x": 1350, "y": 560, "title": "20 гектаров леса", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Парк-отель Lesnoy: открытый бассейн с шезлонгами среди осеннего леса" width="1619" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Lesnoy<small>парк-отель</small></div>
+    <a href="#">Номера</a><a href="#">Аквакомплекс</a><a href="#">Пешки Парк</a><a href="#">Рестораны</a><a href="#">Мероприятия</a>
+    <a class="tel" href="tel:+74957897318">+7 495 789-73-18</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Парк-отель · 37&nbsp;км от Москвы · 20&nbsp;гектаров леса</div>
+    <h1>Бассейн <em>в осеннем лесу</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>крупнейший верёвочный парк России</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Загородный клуб «Ихтиолог» — 120 км по Новорижскому шоссе · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 1780, "h": 1080, "focusX": 0.5, "focusY": 0.5},
+  "weather": {"lat": 56.2, "lon": 35.6, "name": "в «Ихтиологе»"},
+  "places": [
+    {"x": 328, "y": 330, "title": "Дома у воды с пирсом", "icon": "house"},
+    {"x": 705, "y": 600, "title": "Ресторан «Лов»", "icon": "dish"},
+    {"x": 1150, "y": 700, "title": "Прогулка на яхте XVII века", "icon": "sail"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Клуб «Ихтиолог» с высоты: дома у воды, ресторан на берегу и парусная яхта у причала" width="1780" height="1080">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Ихтиолог<small>загородный клуб</small></div>
+    <a href="#">Дома</a><a href="#">Рыбалка</a><a href="#">Ресторан</a><a href="#">СПА</a><a href="#">Мероприятия</a>
+    <a class="tel" href="tel:+74957908890">+7 495 790-88-90</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Загородный клуб · 120&nbsp;км по Новорижскому шоссе · с&nbsp;1991 года</div>
+    <h1>Клуб <em>на воде</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>рыбалка круглый год</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+</body>
+</html>
