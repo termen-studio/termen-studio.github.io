@@ -19,6 +19,9 @@
     beach: '<path d="M3.5 11.5a8.5 8.5 0 0 1 17 0z"/><path d="M12 11.5V19a1.8 1.8 0 0 1-3.6 0"/>',
     steam: '<path d="M8 3.5c-1.2 1.4 1.2 2.6 0 4.5M12 3.5c-1.2 1.4 1.2 2.6 0 4.5M16 3.5c-1.2 1.4 1.2 2.6 0 4.5"/><path d="M4 12h16l-1.5 7.5h-13z"/>',
     glass: '<path d="M3 10.5 12 4.5l9 6"/><path d="M5 9.5V20h14V9.5"/><path d="M9.7 20v-9M14.3 20v-9M5 14.5h14"/>',
+    fire: '<path d="M12 3.5c3 3.2 5 5.8 5 8.8a5 5 0 0 1-10 0c0-1.8.8-3.2 2-4.3.3 1.5 1 2.4 2 2.9-.4-2.7.1-5.1 1-7.4z"/><path d="M5 20.5h14"/>',
+    tent: '<path d="M12 4 2.5 20h19z"/><path d="M12 4v16"/><path d="M9 20l3-6 3 6"/>',
+    dish: '<path d="M3.5 17.5h17"/><path d="M5 17.5a7 7 0 0 1 14 0"/><path d="M12 10.5V8.5"/><path d="M10.5 8.5h3"/>',
     tree: '<path d="M12 3 6.5 10.5h3l-4 6h13l-4-6h3z"/><path d="M12 16.5V21"/>'
   };
   const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
@@ -63,7 +66,7 @@
     pins.forEach((q, k) => { q.el.classList.toggle('on', k === i); q.li.classList.toggle('on', k === i); });
     const W = hero.clientWidth, H = hero.clientHeight;
     const s = Math.max(W / cfg.image.w, H / cfg.image.h), spare = cfg.image.w * s - W;
-    if (spare > W * 0.25) {          // portrait phone: bring the place to the middle of the screen
+    if (H > W && spare > W * 0.25) { // portrait phone: bring the place to the middle of the screen
       fx = Math.min(1, Math.max(0, (pins[i].p.x * s - W * 0.5) / spare));
       setFocus(); layout();
     }
