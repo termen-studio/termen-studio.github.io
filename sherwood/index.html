@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sherwood Park Hotel — домики в сосновом лесу под Ярославлем · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2430, "h": 1620, "focusX": 0.5, "focusY": 0.6},
+  "weather": {"lat": 57.7, "lon": 40.38, "name": "в «Шервуде»"},
+  "places": [
+    {"x": 1330, "y": 900, "title": "Домик с беседкой и мангалом", "icon": "house"},
+    {"x": 2250, "y": 850, "title": "Сосновый лес вокруг", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Sherwood Park Hotel: деревянный домик с террасой среди сосен" width="2430" height="1620" style="object-position: 50% 60%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Sherwood<small>park hotel</small></div>
+    <a href="#">Коттеджи</a><a href="#">Баня</a><a href="#">Беседки</a><a href="#">Банкетный зал</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+74852620111">+7 4852 62-01-11</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · между Ярославлем и Костромой</div>
+    <h1>Рай <em>в сосновом лесу</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>завтрак входит в стоимость</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Шале-отель «Таёжные дачи» — резиденция в лесу под Звенигородом · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2430, "h": 1620, "focusX": 0.5, "focusY": 0.6},
+  "weather": {"lat": 55.72, "lon": 36.86, "name": "под Звенигородом"},
+  "places": [
+    {"x": 1250, "y": 760, "title": "30 дач-шале из бревна", "icon": "house"},
+    {"x": 2150, "y": 700, "title": "Лес на 27 гектарах", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Шале-отель «Таёжные дачи»: резной бревенчатый дом с верандой в лесу" width="2430" height="1620" style="object-position: 50% 60%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Таёжные дачи<small>шале-отель</small></div>
+    <a href="#">Отели и шале</a><a href="#">Бани</a><a href="#">Ресторан</a><a href="#">Свадьбы</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+74954119972">+7 495 411-99-72</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Шале-отель · 40&nbsp;км от Москвы, под Звенигородом</div>
+    <h1>Резиденция <em>в лесу</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>27 га леса у Москвы-реки</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

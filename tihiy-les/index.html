@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Тихий лес» — коттеджи в сосновом бору на Тверце · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2431, "h": 1620, "focusX": 0.5, "focusY": 0.75},
+  "weather": {"lat": 56.94, "lon": 36.08, "name": "в «Тихом лесу»"},
+  "places": [
+    {"x": 1150, "y": 1190, "title": "Коттедж с террасой · 80 м²", "icon": "house"},
+    {"x": 1950, "y": 1170, "title": "10 коттеджей среди сосен", "icon": "house"},
+    {"x": 2060, "y": 950, "title": "Реликтовый сосновый бор", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="База отдыха «Тихий лес»: деревянные коттеджи с террасами среди высоких сосен" width="2431" height="1620" style="object-position: 50% 75%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Тихий лес<small>база отдыха</small></div>
+    <a href="#">Коттеджи</a><a href="#">Чем заняться</a><a href="#">Рестораны</a><a href="#">Галерея</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79201705099">+7 920 170-50-99</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · 30&nbsp;км от Твери, деревня Ямок</div>
+    <h1>Дома <em>в сосновом бору</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>1,5 часа от Москвы по М-11</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

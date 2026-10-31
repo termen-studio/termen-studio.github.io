@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель «Босиком» — на берегу Истринского водохранилища · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 3053, "h": 1620, "focusX": 0.5, "focusY": 0.5},
+  "weather": {"lat": 56.0, "lon": 36.83, "name": "на Истринском водохранилище"},
+  "places": [
+    {"x": 1530, "y": 900, "title": "Двухэтажный коттедж", "icon": "house"},
+    {"x": 2550, "y": 850, "title": "Прибрежный лесной массив", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Парк-отель «Босиком»: двухэтажный коттедж среди осеннего леса, вид сверху" width="3053" height="1620" style="object-position: 50% 50%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Босиком<small>парк-отель</small></div>
+    <a href="#">Коттеджи</a><a href="#">Номера</a><a href="#">Мероприятия</a><a href="#">Услуги</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+74999118075">+7 499 911-80-75</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Парк-отель · берег Истринского водохранилища</div>
+    <h1>Коттеджи <em>среди леса</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>пляж, катамараны и лодки</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
