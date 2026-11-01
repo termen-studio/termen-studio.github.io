@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Ладога Озеро» — коттеджи на берегу Ладоги · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2880, "h": 1620, "focusX": 0.5, "focusY": 0.5},
+  "weather": {"lat": 61.04, "lon": 30.25, "name": "на Ладоге"},
+  "places": [
+    {"x": 1150, "y": 1060, "title": "Коттеджи в сосновом лесу", "icon": "house"},
+    {"x": 2140, "y": 1130, "title": "Коттедж с террасой", "icon": "house"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Ладога Озеро с высоты: коттеджи в сосновом лесу и Ладожское озеро" width="2880" height="1620" style="object-position: 50% 50%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Ладога Озеро<small>база отдыха</small></div>
+    <a href="#">Коттеджи</a><a href="#">Сауны и баня</a><a href="#">Чем заняться</a><a href="#">Галерея</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79312243970">+7 931 224-39-70</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · Приозерский район, у посёлка Бурнево</div>
+    <h1>Коттеджи <em>на берегу Ладоги</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>Дровяные сауны, русская баня и экотропы</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

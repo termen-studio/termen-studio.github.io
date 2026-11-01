@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Белая Морошка» — дома на высоком берегу Волги · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2431, "h": 1620, "focusX": 0.5, "focusY": 0.6},
+  "weather": {"lat": 57.88, "lon": 38.35, "name": "в «Белой Морошке»"},
+  "places": [
+    {"x": 1250, "y": 960, "title": "Гостевой дом с верандой", "icon": "house"},
+    {"x": 450, "y": 780, "title": "Дома с резными наличниками", "icon": "house"},
+    {"x": 2150, "y": 880, "title": "Луг и лес вокруг", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Белая Морошка: бревенчатые дома с резными наличниками и верандами" width="2431" height="1620" style="object-position: 50% 60%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Белая Морошка<small>база отдыха</small></div>
+    <a href="#">Дома</a><a href="#">Чем заняться</a><a href="#">Кухня</a><a href="#">Баня</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79038268425">+7 903 826-84-25</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · Мышкинский район, на берегу Волги</div>
+    <h1>Дома <em>на высоком берегу Волги</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>Сосновый бор, пирс, пляж и баня</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

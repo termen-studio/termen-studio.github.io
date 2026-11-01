@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель «Дербовеж» — отдых на озере в Тверской области · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2448, "h": 1620, "focusX": 0.5, "focusY": 0.55},
+  "weather": {"lat": 56.27, "lon": 32.1, "name": "в «Дербовеже»"},
+  "places": [
+    {"x": 1080, "y": 730, "title": "Коттеджи у озера", "icon": "house"},
+    {"x": 1610, "y": 900, "title": "Детский городок", "icon": "kids"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Дербовеж: коттеджи с красными крышами, детский городок и озеро" width="2448" height="1620" style="object-position: 50% 55%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Дербовеж<small>парк-отель</small></div>
+    <a href="#">Коттеджи</a><a href="#">Бани</a><a href="#">Рестораны</a><a href="#">Чем заняться</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79607090999">+7 960 709-09-99</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Парк-отель · Тверская область, трасса М9 «Балтия»</div>
+    <h1>Отдых <em>на берегу озера</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>Бани, плавучий ресторан и бассейн</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

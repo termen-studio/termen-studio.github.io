@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель «4 Сезона» — коттеджи и номера в Серпуховском округе · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2430, "h": 1620, "focusX": 0.3, "focusY": 0.6},
+  "weather": {"lat": 54.95, "lon": 37.45, "name": "в «4 Сезонах»"},
+  "places": [
+    {"x": 700, "y": 880, "title": "Коттедж у пруда", "icon": "house"},
+    {"x": 1600, "y": 1250, "title": "Пруд в парке", "icon": "pond"},
+    {"x": 2050, "y": 750, "title": "Лес вокруг", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Парк-отель «4 Сезона»: серый коттедж с верандой у пруда среди деревьев" width="2430" height="1620" style="object-position: 30% 60%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">4 Сезона<small>парк-отель</small></div>
+    <a href="#">Номера и коттеджи</a><a href="#">Чем заняться</a><a href="#">Ресторан</a><a href="#">Баня</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79264800500">+7 926 480-05-00</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Парк-отель · Серпуховский округ, деревня Васильевское</div>
+    <h1>Отдых <em>в любое время года</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>1,5 часа от Москвы</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
