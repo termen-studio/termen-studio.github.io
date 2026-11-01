@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель «Покровское» — 33 гектара леса в Одинцовском округе · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2909, "h": 1620, "focusX": 0.55, "focusY": 0.6},
+  "weather": {"lat": 55.6, "lon": 36.9, "name": "в «Покровском»"},
+  "places": [
+    {"x": 1590, "y": 960, "title": "Домик у озера", "icon": "house"},
+    {"x": 1000, "y": 1350, "title": "Родниковое озеро", "icon": "pond"},
+    {"x": 2450, "y": 950, "title": "Лес вокруг", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Парк-отель «Покровское»: родниковое озеро, белый домик на берегу и еловый лес" width="2909" height="1620" style="object-position: 55% 60%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Покровское<small>парк-отель</small></div>
+    <a href="#">Номера и коттеджи</a><a href="#">Банкеты</a><a href="#">Спортивные сборы</a><a href="#">Рестораны</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+74997571613">+7 499 757-16-13</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Парк-отель · Одинцовский округ, Московская область</div>
+    <h1>Отдых <em>в 33 гектарах леса</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>9 корпусов, 60 коттеджей и озеро с пляжем</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

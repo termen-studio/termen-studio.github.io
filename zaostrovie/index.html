@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Заостровье» — коттеджи на берегу Ладожского озера · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2430, "h": 1620, "focusX": 0.55, "focusY": 0.5},
+  "weather": {"lat": 60.3, "lon": 32.45, "name": "в Заостровье"},
+  "places": [
+    {"x": 1350, "y": 900, "title": "Коттедж с газоном", "icon": "house"},
+    {"x": 300, "y": 950, "title": "Сосны вокруг", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Заостровье: одноэтажный коттедж с газоном среди высоких сосен" width="2430" height="1620" style="object-position: 55% 50%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Заостровье<small>база отдыха</small></div>
+    <a href="#">Коттеджи</a><a href="#">Номера</a><a href="#">Ресторан</a><a href="#">Баня</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+88002343316">8 800 234-33-16</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · Волховский район, деревня Заостровье</div>
+    <h1>Отдых <em>на берегу Ладоги</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>Коттеджи, панорамный ресторан и баня</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

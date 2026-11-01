@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Хутор Барышево — загородный отель у реки Вуоксы · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2160, "h": 1620, "focusX": 0.6, "focusY": 0.5},
+  "weather": {"lat": 60.9, "lon": 29.6, "name": "в Барышево"},
+  "places": [
+    {"x": 1650, "y": 880, "title": "Коттеджи с террасами", "icon": "house"},
+    {"x": 520, "y": 1080, "title": "Лужайка у дорожки", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Хутор Барышево: тёмные коттеджи с террасами, дорожка и цветущая яблоня" width="2160" height="1620" style="object-position: 60% 50%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Хутор Барышево<small>загородный отель</small></div>
+    <a href="#">Коттеджи</a><a href="#">Спа и баня</a><a href="#">Ферма</a><a href="#">Ресторан</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79626866800">+7 962 686-68-00</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Загородный отель · Выборгский район, посёлок Барышево</div>
+    <h1>Хутор <em>у реки Вуоксы</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>Фермерский завтрак, баня и купели</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Комплекс коттеджей Green Village — 25 гектаров соснового леса в Приозерском районе · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2431, "h": 1620, "focusX": 0.5, "focusY": 0.55},
+  "weather": {"lat": 60.68, "lon": 30.05, "name": "в Green Village"},
+  "places": [
+    {"x": 1300, "y": 850, "title": "Коттедж из бревна", "icon": "house"},
+    {"x": 2200, "y": 650, "title": "Сосновый лес", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Green Village: красный бревенчатый коттедж среди сосен, лужайка и цветущее дерево" width="2431" height="1620" style="object-position: 50% 55%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Green Village<small>комплекс коттеджей</small></div>
+    <a href="#">Коттеджи</a><a href="#">Баня</a><a href="#">Бассейн</a><a href="#">Рыбалка</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79013150798">+7 901 315-07-98</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">Коттеджи · Приозерский район, 76&nbsp;км Новоприозерского шоссе</div>
+    <h1>Коттеджи <em>в сосновом лесу</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>25 гектаров леса, свой пляж и баня</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

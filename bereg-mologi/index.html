@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Берег Мологи» — отдых на Рыбинском водохранилище · концепт</title>
+<link rel="preload" href="media/hero.jpg" as="image">
+<link rel="stylesheet" href="hotel.css?r=1">
+</head>
+<body>
+
+<!-- Hotel template: everything specific to one hotel lives in this file (texts, places, weather point).
+     hotel.css and hotel.js are shared between hotels. Place x/y are pixels on the hero image; icon is one of the ICONS in hotel.js. -->
+<script type="application/json" id="hotel">
+{
+  "image": {"src": "media/hero.jpg", "w": 2155, "h": 1620, "focusX": 0.45, "focusY": 0.55},
+  "weather": {"lat": 58.6, "lon": 37.4, "name": "на Мологе"},
+  "places": [
+    {"x": 1000, "y": 900, "title": "Дом с большим балконом", "icon": "house"},
+    {"x": 1990, "y": 900, "title": "Лес вокруг базы", "icon": "tree"}
+  ]
+}
+</script>
+
+<section class="hero" id="hero">
+  <img class="photo" src="media/hero.jpg" alt="Берег Мологи: бревенчатый дом с большим балконом среди деревьев" width="2155" height="1620" style="object-position: 45% 55%">
+  <div class="pins"></div>
+
+  <nav class="top">
+    <div class="brand">Берег Мологи<small>база отдыха</small></div>
+    <a href="#">Гостиница и домики</a><a href="#">Рыбалка</a><a href="#">Охота</a><a href="#">Ресторан</a><a href="#">Контакты</a>
+    <a class="tel" href="tel:+79201523173">+7 920 152-31-73</a>
+    <a class="btn small" href="#">Забронировать</a>
+  </nav>
+
+  <div class="copy">
+    <div class="kicker">База отдыха · Весьегонский район, Тверская область</div>
+    <h1>Отдых <em>в устье Мологи</em></h1>
+  </div>
+
+  <ul class="list"></ul>
+
+  <div class="side">
+    <div class="weather" hidden></div>
+    <a class="btn" href="#">Выбрать даты<span>На берегу Рыбинского водохранилища</span></a>
+  </div>
+</section>
+
+<script src="hotel.js?r=1"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
