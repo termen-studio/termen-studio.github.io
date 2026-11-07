@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Парк-отель «Дербовеж» · концепт сайта</title>
+<link rel="stylesheet" href="v.css">
+<link rel="stylesheet" href="full.css">
+<style>
+/* Дербовеж, full concept (8.11) on the Барин template: first screen in the «Буклет» layout, chapters from full.css. */
+.hero { display: grid; grid-template-columns: 40fr 60fr; column-gap: 4vw; height: calc(100svh - clamp(56px, 4.6vw, 104px)); min-height: 560px; padding: 0 var(--m) var(--m); }
+.copy { display: flex; flex-direction: column; justify-content: center; padding-bottom: 4vh; }
+.copy h1 { font-size: clamp(44px, 5.1vw, 156px); line-height: .98; margin: 1.6vw 0 2vw; }
+.copy .row { display: flex; align-items: center; gap: 1.6vw; flex-wrap: wrap; margin-top: 2.6vw; }
+.stack { position: relative; }
+.big { position: absolute; inset: 0 0 0 9%; border-radius: clamp(12px, 1vw, 22px); overflow: hidden; box-shadow: 0 2.4vw 6vw rgba(0, 0, 0, .45); }
+.big img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+.big .chip { position: absolute; left: 50%; top: 40%; }
+.bar .tel { white-space: nowrap; }
+.small { position: absolute; left: 0; bottom: 7%; width: 31%; }
+.small figure { margin: 0; border-radius: clamp(10px, .8vw, 18px); overflow: hidden; box-shadow: 0 1.6vw 4vw rgba(0, 0, 0, .5); outline: clamp(4px, .35vw, 8px) solid var(--forest); }
+.small img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; }
+.small .chip { margin-top: 1vw; }
+.js .in-1, .js .in-2, .js .in-3, .js .in-4 { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .big.in-5 { opacity: 0; transform: scale(1.03); transition: opacity 1.2s var(--ease), transform 1.6s var(--ease); }
+.js .small.in-6 { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease) .5s, transform 1.2s var(--ease) .5s; }
+.js.go .in-1, .js.go .in-2, .js.go .in-3, .js.go .in-4, .js.go .big.in-5, .js.go .small.in-6 { opacity: 1; transform: none; }
+.in-2 { transition-delay: .08s !important; } .in-3 { transition-delay: .16s !important; } .in-4 { transition-delay: .24s !important; }
+@media (prefers-reduced-motion: reduce) { html.js:not(.fx) [class*="in-"] { opacity: 1 !important; transform: none !important; transition: none !important; } }
+@media (max-width: 820px) {
+  .hero { display: block; height: auto; padding: 0 var(--m) 40px; }
+  .copy { padding: 10px 0 34px; }
+  .copy h1 { font-size: 11vw; margin: 12px 0 16px; }
+  .copy .row { margin-top: 22px; gap: 16px; }
+  .stack { height: 118vw; }
+  .big { inset: 0 0 18% 0; }
+  .big .chip { left: 6%; top: 6%; }
+  .bar { flex-wrap: wrap; row-gap: 6px; }
+  .bar .brand { letter-spacing: .12em; }
+  .small { width: 54%; left: 6%; bottom: 0; }
+}
+/* page specifics: the halls list reuses the timeline, the long name closes the page smaller */
+.halls b { font-family: var(--display); font-weight: 500; color: var(--gold); font-size: clamp(28px, 2.2vw, 66px); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.close .name { font-size: 16vw; }
+.formats span { max-width: 14ch; }
+.halls li { grid-template-columns: clamp(120px, 11vw, 320px) 1fr; }
+@media (max-width: 820px) { .halls li { grid-template-columns: 124px 1fr; } }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#">Парк-отель «Дербовеж»</a>
+  <nav><a href="#doma">Коттеджи</a><a href="#svadby">Свадьбы и праздники</a><a href="#banya">Бани и бассейн</a><a href="#rybalka">Рыбалка</a><a href="#kontakty">Контакты</a></nav>
+  <a class="tel" href="tel:+79607090999">+7 960 709-09-99</a>
+</header>
+<section class="hero">
+  <div class="copy">
+    <p class="kicker in-1">Парк-отель · Тверская область, трасса М-9</p>
+    <h1 class="in-2">Отдых <em>на&nbsp;берегу озера</em></h1>
+    <p class="lead in-3">Деревянные коттеджи в&nbsp;хвойном лесу, баня на&nbsp;плаву, плавучий ресторан и&nbsp;рыбалка на&nbsp;двух озёрах.</p>
+    <div class="row in-4"><a class="btn" href="https://derbovezh.ru/booking/">Выбрать даты<small>завтраки входят в&nbsp;проживание</small></a><p class="live" data-at="56.27,32.1,в «Дербовеже»" hidden></p></div>
+  </div>
+  <div class="stack">
+    <div class="big in-5"><img src="media/big.jpg" alt="Озеро Дербовеж зимним вечером, огни на берегу" width="2560" height="1717"><span class="chip"><i></i>Озеро Дербовеж</span></div>
+    <div class="small in-6"><figure><img src="media/small.jpg" alt="Два бревенчатых коттеджа в лесу" width="1100" height="825"></figure><span class="chip">Коттеджи в&nbsp;лесу</span></div>
+  </div>
+</section>
+
+<svg class="thread" aria-hidden="true"><path d=""/></svg>
+
+<section class="doma" id="doma">
+  <i class="mk a" data-dot></i>
+  <p class="kicker" data-rise>Проживание</p>
+  <h2 class="caps" data-rise>Дома <em>у</em> озера</h2>
+  <p class="lead2" data-rise>Отдельные деревянные дома на&nbsp;парковой территории с&nbsp;выходом к&nbsp;лесу и&nbsp;воде&nbsp;— от&nbsp;номера на&nbsp;двоих до&nbsp;охотничьего дома на&nbsp;двенадцать гостей.</p>
+  <div class="arches">
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-cabin.jpg" alt="Бревенчатый коттедж среди берёз" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Коттеджи из&nbsp;бревна</h3><p class="meta">30–70 м² · 2–6 гостей</p><p>«Стандарт», «Комфорт» и&nbsp;«Семейный»: от&nbsp;одноэтажного номера для пары до&nbsp;двух этажей с&nbsp;двумя спальнями.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-dome.jpg" alt="Геокупол на деревянной террасе в лесу" width="1150" height="1878" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Геокупол на&nbsp;берегу</h3><p class="meta">12 м² · до 3 гостей</p><p>Купол на&nbsp;деревянной террасе у&nbsp;самой воды&nbsp;— необычная ночь на&nbsp;берегу озера.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-inside.jpg" alt="Гостиная коттеджа с бревенчатыми стенами и мягкой мебелью" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Внутри</h3><p class="meta">завтраки включены</p><p>Своя ванная с&nbsp;душем, Wi-Fi, телевизор, халаты и&nbsp;полотенца. Можно с&nbsp;собакой.</p></figcaption>
+    </figure>
+  </div>
+  <p class="all" data-rise><a class="more" href="https://derbovezh.ru/razmeshhenie/">Все коттеджи и&nbsp;цены</a></p>
+  <i class="mk b"></i>
+</section>
+
+<section class="svadby" id="svadby">
+  <div class="wide" data-par>
+    <img src="media/svadba.jpg" alt="Качели под деревянным навесом на берегу озера" width="2800" height="1867" loading="lazy">
+    <div class="title">
+      <p class="kicker" data-rise>Свадьбы и&nbsp;праздники</p>
+      <h2 class="caps" data-rise>Свадьба <span class="pill" data-rise><img src="media/svadba-pill.jpg" alt="" width="700" height="219"></span><br>на&nbsp;фоне <em>озера</em></h2>
+    </div>
+  </div>
+  <div class="day cols">
+    <div class="left">
+      <h3 data-rise>Регистрация под аркой у&nbsp;воды</h3>
+      <p class="lead2" data-rise>Гости собираются на&nbsp;лесной поляне, молодожёны встречаются под аркой на&nbsp;фоне озера. Время регистрации выбираете вы&nbsp;— хоть под звёздами.</p>
+      <div class="formats" data-rise>
+        <div><b>150</b><span>гостей в&nbsp;плавучем ресторане</span></div>
+        <div><b>50</b><span>гостей в&nbsp;ресторане «Дербовеж»</span></div>
+      </div>
+      <ul class="perks" data-rise>
+        <li>Блюда из&nbsp;дичи и&nbsp;рыбы со&nbsp;своего хозяйства</li>
+        <li>Фотосессия в&nbsp;лесу и&nbsp;на&nbsp;берегу</li>
+        <li>Свадьбы, юбилеи, корпоративы и&nbsp;выпускные</li>
+      </ul>
+      <a class="btn" href="https://derbovezh.ru/services/svadby/" data-rise>Рассчитать смету<small>подберём площадку под ваш формат</small></a>
+    </div>
+    <ol class="timeline halls">
+      <li><i class="mk" data-dot data-turn="h"></i><b>150</b><span>плавучий ресторан посреди озера</span></li>
+      <li><i class="mk" data-dot></i><b>50</b><span>ресторан «Дербовеж» с&nbsp;каминным залом</span></li>
+      <li><i class="mk" data-dot></i><b>Шатёр</b><span>на&nbsp;поляне или у&nbsp;воды</span></li>
+      <li><i class="mk" data-dot></i><b>Коттеджи</b><span>с&nbsp;мангалом&nbsp;— для камерных встреч</span></li>
+      <li class="next">площадки для праздника</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bani" id="banya">
+  <i class="mk" data-dot></i>
+  <div class="text">
+    <figure class="thumb" data-rise><img src="media/thumb.jpg" alt="Финская сауна с деревянными полками" width="800" height="800" loading="lazy"></figure>
+    <h2 class="caps" data-rise>Баня <em>на&nbsp;плаву</em></h2>
+    <p class="lead2" data-rise>Выходите из&nbsp;парилки прямо в&nbsp;озеро. Рядом&nbsp;— баня по-чёрному с&nbsp;чаном на&nbsp;травах, русская баня на&nbsp;дровах и&nbsp;тёплый бассейн под открытым небом.</p>
+    <ul class="programs" data-rise>
+      <li><b>Баня на&nbsp;плаву</b><span>на&nbsp;озере, до&nbsp;5 гостей, первый час</span><strong>5&nbsp;000&nbsp;₽</strong></li>
+      <li><b>Баня по-чёрному</b><span>до&nbsp;10 гостей, с&nbsp;чаном&nbsp;— 15&nbsp;000&nbsp;₽</span><strong>10&nbsp;000&nbsp;₽</strong></li>
+      <li><b>Русская баня</b><span>на&nbsp;дровах, с&nbsp;купелью, первый час на&nbsp;двоих</span><strong>3&nbsp;000&nbsp;₽</strong></li>
+      <li><b>Термобассейн</b><span>открытый, круглый год, даже в&nbsp;−25°</span><strong>включён</strong></li>
+    </ul>
+    <p class="fine" data-rise>Финская сауна · хаммам · соляная комната · фитокомната · массаж</p>
+  </div>
+  <div class="photo" data-par><img src="media/pool.jpg" alt="Открытый подогреваемый бассейн у леса" width="2560" height="1707" loading="lazy"></div>
+</section>
+
+<section class="restoran cols" id="rybalka">
+  <i class="mk" data-dot></i>
+  <div class="pics">
+    <div class="tall" data-par><img src="media/fish.jpg" alt="Лодка на озере Дербовеж, вид сверху" width="1500" height="1875" loading="lazy"></div>
+    <figure class="dish" data-rise><div class="ph"><img src="media/pier.jpg" alt="Причал с лодками и катамаранами" width="900" height="675" loading="lazy"></div><figcaption class="chip"><i></i>Причал и&nbsp;лодки</figcaption></figure>
+  </div>
+  <div class="text">
+    <p class="kicker" data-rise>Рыбалка и&nbsp;охота</p>
+    <h2 class="caps" data-rise>Рыбалка <em>на&nbsp;двух</em> озёрах</h2>
+    <p class="lead2" data-rise>Мостки и&nbsp;лодки, карп, щука, лещ, окунь и&nbsp;толстолобик. Пока вы рыбачите, семья отдыхает на&nbsp;территории.</p>
+    <ul class="venues" data-rise>
+      <li><b>2<small>озера</small></b><span><strong>Летняя рыбалка</strong>путёвка 1&nbsp;500&nbsp;₽, каждая десятая&nbsp;— бесплатно</span></li>
+      <li><b>3<small>кг</small></b><span><strong>Норма вылова</strong>на&nbsp;путёвку; подлёдная рыбалка для живущих в&nbsp;«Дербовеже»&nbsp;— бесплатно</span></li>
+    </ul>
+    <p class="menu" data-rise><b>Охота с&nbsp;егерями</b>&nbsp;— на&nbsp;лося, кабана, лань и&nbsp;благородного оленя. А&nbsp;детям&nbsp;— зооферма с&nbsp;оленями, ламами и&nbsp;кроликами.</p>
+    <p data-rise><a class="more" href="https://derbovezh.ru/services/rybalka/">Правила и&nbsp;цены рыбалки</a></p>
+  </div>
+</section>
+
+<section class="kontakty" id="kontakty">
+  <i class="mk" data-dot></i>
+  <div class="pano" data-par><img src="media/territoriya.jpg" alt="Территория парк-отеля: дома, сад и озеро вдали" width="2800" height="1853" loading="lazy"><span class="chip"><i></i>Парковая территория у&nbsp;озера</span></div>
+  <div class="visit cols">
+    <div>
+      <h2 class="caps" data-rise>Ждём вас <em>в&nbsp;«Дербовеже»</em></h2>
+      <address data-rise>Тверская область, Западнодвинский округ, деревня Соломкино, 375-й км трассы М-9 «Балтия»<span>380 км от&nbsp;Москвы, 280 км от&nbsp;Твери</span></address>
+    </div>
+    <div class="right">
+      <dl data-rise>
+        <div><dt>Бронирование</dt><dd><a href="tel:+79607090999">+7 960 709-09-99</a></dd></div>
+        <div><dt>Ресторан и&nbsp;бар</dt><dd><a href="tel:+79109375757">+7 910 937-57-57</a></dd></div>
+        <div><dt>Новый год 2027</dt><dd>3 ночи, от&nbsp;99&nbsp;000&nbsp;₽ за&nbsp;коттедж</dd></div>
+      </dl>
+      <div class="acts" data-rise><a class="btn" href="https://derbovezh.ru/booking/">Забронировать<small>свободные даты онлайн</small></a><a class="more" href="https://t.me/derbovezh">Telegram</a></div>
+    </div>
+  </div>
+  <footer class="close">
+    <i class="mk e"></i><i class="mk f" data-dot="big"></i>
+    <p class="name">Дербовеж</p>
+    <div class="note"><span>Концепт сайта парк-отеля «Дербовеж» от&nbsp;студии Termen</span><span>Фото&nbsp;— с&nbsp;сайта парк-отеля derbovezh.ru</span></div>
+  </footer>
+</section>
+
+<script src="v.js"></script>
+<script>
+// entrance once the fonts are in, and a slight depth between the two cards under the cursor
+(() => {
+  const root = document.documentElement; root.classList.add('js');
+  const fx = new URLSearchParams(location.search).has('fx'); if (fx) root.classList.add('fx');
+  const go = () => requestAnimationFrame(() => root.classList.add('go'));
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(go); setTimeout(go, 1200);
+  if ((matchMedia('(prefers-reduced-motion: reduce)').matches && !fx) || !matchMedia('(pointer: fine)').matches) return;
+  const big = document.querySelector('.big img'), small = document.querySelector('.small');
+  addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    big.style.transform = `scale(1.04) translate(${x * -10}px, ${y * -8}px)`;
+    small.style.translate = `${x * 18}px ${y * 12}px`;
+  });
+})();
+</script>
+<script src="full.js"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
