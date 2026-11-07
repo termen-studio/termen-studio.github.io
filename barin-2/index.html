@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Загородный клуб «Барин» · концепт, вариант 2</title>
+<title>Загородный клуб «Барин» · концепт сайта</title>
 <link rel="stylesheet" href="v.css">
+<link rel="stylesheet" href="full.css">
 <style>
 /* Барин, second first screen in the «Буклет» template (7.11): the log house under tall pines as the big card, a banquet table as the second card. */
 .hero { display: grid; grid-template-columns: 40fr 60fr; column-gap: 4vw; height: calc(100svh - clamp(56px, 4.6vw, 104px)); min-height: 560px; padding: 0 var(--m) var(--m); }
@@ -44,7 +45,7 @@
 <body>
 <header class="bar">
   <a class="brand" href="#">Загородный клуб «Барин»</a>
-  <nav><a href="#">Отель</a><a href="#">Бани</a><a href="#">Свадьбы</a><a href="#">Ресторан</a><a href="#">Контакты</a></nav>
+  <nav><a href="#doma">Отель</a><a href="#bani">Бани</a><a href="#svadby">Свадьбы</a><a href="#restoran">Ресторан</a><a href="#kontakty">Контакты</a></nav>
   <a class="tel" href="tel:+79857698833">+7 (985) 769-88-33</a>
 </header>
 <section class="hero">
@@ -52,13 +53,136 @@
     <p class="kicker in-1">Загородный клуб · Щёлковское шоссе</p>
     <h1 class="in-2">Праздник с&nbsp;ночёвкой <em>в&nbsp;40&nbsp;км от&nbsp;МКАД</em></h1>
     <p class="lead in-3">Номера и&nbsp;таунхаусы, бани, ресторан и&nbsp;свадьбы на&nbsp;лужайке среди сосен.</p>
-    <div class="row in-4"><a class="btn" href="#">Оставить заявку<small>банкетное меню от 6&nbsp;000&nbsp;₽ на гостя</small></a><p class="live" data-at="55.98,38.12,в «Барине»" hidden></p></div>
+    <div class="row in-4"><a class="btn" href="#kontakty">Оставить заявку<small>банкетное меню от 6&nbsp;000&nbsp;₽ на гостя</small></a><p class="live" data-at="55.98,38.12,в «Барине»" hidden></p></div>
   </div>
   <div class="stack">
     <div class="big in-5"><img src="media/big.jpg" alt="Бревенчатый дом клуба «Барин» в саду под высокими соснами" width="2560" height="1920"><span class="chip"><i></i>Деревянные дома среди сосен</span></div>
     <div class="small in-6"><figure><img src="media/small.jpg" alt="Банкетный стол со свечами и цветами" width="1092" height="819"></figure><span class="chip">Свадьбы и банкеты</span></div>
   </div>
 </section>
+<svg class="thread" aria-hidden="true"><path d=""/></svg>
+
+<section class="doma" id="doma">
+  <i class="mk a" data-dot></i>
+  <p class="kicker" data-rise>Проживание</p>
+  <h2 class="caps" data-rise>Домики <em>и</em> <span class="nw">А-фреймы</span></h2>
+  <p class="lead2" data-rise>Восемь форматов рядом с&nbsp;лесом&nbsp;— от&nbsp;номера на&nbsp;двоих до&nbsp;дома на&nbsp;девять гостей с&nbsp;собственной баней, бассейном и&nbsp;чаном.</p>
+  <div class="arches">
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-banya-dom.jpg" alt="Банный дом «Барин» из бревна в саду" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Банный дом «Барин»</h3><p class="meta">140 м² · до 9 гостей</p><p>Своя баня, бассейн и&nbsp;чан&nbsp;— большой дом для компании.</p><p class="price">от 19&nbsp;900&nbsp;₽ в&nbsp;будни</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-aframe.jpg" alt="А-фрейм среди сосен на лесной опушке" width="1150" height="1878" loading="lazy"></div></div>
+      <figcaption data-rise><h3>А-фрейм</h3><p class="meta">55 м² · до 4 гостей</p><p>Панорамные окна на&nbsp;сосновый лес, своя беседка, костровая чаша и&nbsp;чан на&nbsp;открытом огне.</p><p class="price">от 8&nbsp;600&nbsp;₽ в&nbsp;будни</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-izba.jpg" alt="Банная изба из бревна" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Банная изба</h3><p class="meta">40 м² · для двоих</p><p>Своя дровяная баня и&nbsp;камин, во&nbsp;дворике&nbsp;— ледяная купель, мангал и&nbsp;терраса.</p><p class="price">18&nbsp;000&nbsp;₽ в&nbsp;будни</p></figcaption>
+    </figure>
+  </div>
+  <p class="all" data-rise><a class="more" href="https://clubbarin.ru/accommodation/">Все дома, свободные даты и&nbsp;цены</a></p>
+  <i class="mk b"></i>
+</section>
+
+<section class="svadby" id="svadby">
+  <div class="wide" data-par>
+    <img src="media/svadba-shater.jpg" alt="Белый шатёр на лужайке среди сосен, накрытые столы" width="3000" height="2250" loading="lazy">
+    <div class="title">
+      <p class="kicker" data-rise>Свадьбы на&nbsp;природе</p>
+      <h2 class="caps" data-rise>Свадьба <span class="pill" data-rise><img src="media/svadba-pill.jpg" alt="" width="700" height="219"></span><br>от&nbsp;утра <em>до&nbsp;утра</em></h2>
+    </div>
+  </div>
+  <div class="day cols">
+    <div class="left">
+      <h3 data-rise>Весь день&nbsp;— в&nbsp;одном месте</h3>
+      <p class="lead2" data-rise>Сборы, выездная регистрация, банкет и&nbsp;ночь на&nbsp;закрытой территории&nbsp;— только вы и&nbsp;ваши гости.</p>
+      <div class="formats" data-rise>
+        <div><b>20–40</b><span>камерная</span></div>
+        <div><b>40–80</b><span>классическая</span></div>
+        <div><b>100+</b><span>большая</span></div>
+      </div>
+      <ul class="perks" data-rise>
+        <li>Свои напитки без пробкового сбора</li>
+        <li>Персональный координатор на&nbsp;всех этапах</li>
+        <li>Кэшбэк 10% на&nbsp;годовщину свадьбы</li>
+      </ul>
+      <a class="btn" href="https://clubbarin.ru/weddings/" data-rise>Рассчитать свадьбу<small>банкетное меню от 6&nbsp;000&nbsp;₽ на гостя</small></a>
+    </div>
+    <ol class="timeline">
+      <li><i class="mk" data-dot data-turn="h"></i><time>9:00</time><span>Утро невесты</span></li>
+      <li><i class="mk" data-dot></i><time>11:00</time><span>Фотосессия</span></li>
+      <li><i class="mk" data-dot></i><time>14:00</time><span>Фуршет и&nbsp;сбор гостей</span></li>
+      <li><i class="mk" data-dot></i><time>15:00</time><span>Выездная регистрация</span></li>
+      <li><i class="mk" data-dot></i><time>16:00</time><span>Банкет</span></li>
+      <li><i class="mk" data-dot></i><time>23:00</time><span>Afterparty у&nbsp;пруда</span></li>
+      <li class="next">Следующий день</li>
+      <li><i class="mk" data-dot></i><time>9:00</time><span>Завтрак с&nbsp;гостями</span></li>
+      <li><i class="mk" data-dot></i><time>12:00</time><span>Второй день с&nbsp;BBQ</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bani" id="bani">
+  <i class="mk" data-dot></i>
+  <div class="text">
+    <figure class="thumb" data-rise><img src="media/banya-chan.jpg" alt="Чан на костре с пихтовыми ветками" width="800" height="800" loading="lazy"></figure>
+    <h2 class="caps" data-rise>Русская баня <em>на&nbsp;дровах</em></h2>
+    <p class="lead2" data-rise>Отдельные срубы с&nbsp;дровяными печами, приватными двориками, холодными купелями и&nbsp;чанами на&nbsp;открытом огне. Парение с&nbsp;пармастером, веники и&nbsp;травяные программы.</p>
+    <ul class="programs" data-rise>
+      <li><b>«Банная романтика»</b><span>2 часа в&nbsp;банной избе, чан на&nbsp;костре, веники и&nbsp;травяной чай</span><strong>11&nbsp;900&nbsp;₽</strong></li>
+      <li><b>«Свидание для двоих»</b><span>Парение с&nbsp;пармастером и&nbsp;ужин на&nbsp;двоих в&nbsp;бане или домике</span><strong>23&nbsp;900&nbsp;₽</strong></li>
+      <li><b>«Свидание по-Барски»</b><span>3 часа, чан со&nbsp;свечами и&nbsp;пихтой, два парения, медово-солевой пилинг</span><strong>44&nbsp;900&nbsp;₽</strong></li>
+    </ul>
+    <p class="fine" data-rise>Цены программ в&nbsp;будни, проживание отдельно · Банная изба от&nbsp;3&nbsp;000&nbsp;₽ в&nbsp;час</p>
+  </div>
+  <div class="photo" data-par><img src="media/banya-shapka.jpg" alt="Банная шапка «Clubbarin», баранки и самовар у печи" width="2560" height="1703" loading="lazy"></div>
+</section>
+
+<section class="restoran cols" id="restoran">
+  <i class="mk" data-dot></i>
+  <div class="pics">
+    <div class="tall" data-par><img src="media/rest-obed.jpg" alt="Обед в ресторане клуба за столом из слэба" width="1366" height="1707" loading="lazy"></div>
+    <figure class="dish" data-rise><div class="ph"><img src="media/rest-gril.jpg" alt="Блюдо с мангала на деревянной доске" width="900" height="675" loading="lazy"></div><figcaption class="chip"><i></i>Фермерские продукты</figcaption></figure>
+  </div>
+  <div class="text">
+    <p class="kicker" data-rise>Ресторан и&nbsp;банкетный зал</p>
+    <h2 class="caps" data-rise>Ресторан <em>русской</em> кухни</h2>
+    <p class="lead2" data-rise>Фермерские продукты и&nbsp;современная подача. Для гостей отеля и&nbsp;для всех, кто приезжает на&nbsp;обед, ужин или праздник.</p>
+    <ul class="venues" data-rise>
+      <li><b>40<small>гостей</small></b><span><strong>Ресторан</strong>столы из&nbsp;слэбов, мягкая мебель, звук, свет и&nbsp;проектор</span></li>
+      <li><b>80<small>гостей</small></b><span><strong>Банкетный зал</strong>потолки до&nbsp;8&nbsp;метров, круглые столы и&nbsp;стулья Кьявари</span></li>
+      <li><b>60<small>гостей</small></b><span><strong>Шатёр на&nbsp;лужайке</strong>два лофта, костровая зона, мангал и&nbsp;BBQ</span></li>
+    </ul>
+    <p class="menu" data-rise><b>Банкетное меню</b>&nbsp;— сеты за&nbsp;6&nbsp;000, 7&nbsp;000 и&nbsp;8&nbsp;000&nbsp;₽ на&nbsp;гостя. Свой алкоголь&nbsp;— без пробкового сбора.</p>
+    <p data-rise><a class="more" href="https://clubbarin.ru/restaurant/">Меню ресторана</a></p>
+  </div>
+</section>
+
+<section class="kontakty" id="kontakty">
+  <i class="mk" data-dot></i>
+  <div class="pano" data-par><img src="media/territoriya.jpg" alt="Территория клуба: дома, свадебная арка, пруд и сосны" width="3000" height="1422" loading="lazy"><span class="chip"><i></i>Лужайка у&nbsp;пруда среди сосен</span></div>
+  <div class="visit cols">
+    <div>
+      <h2 class="caps" data-rise>Ждём вас <em>в&nbsp;«Барине»</em></h2>
+      <address data-rise>г.&nbsp;о.&nbsp;Щёлково, деревня Протасово, улица Весенняя,&nbsp;4<span>40&nbsp;км от&nbsp;МКАД по&nbsp;Щёлковскому шоссе</span></address>
+    </div>
+    <div class="right">
+      <dl data-rise>
+        <div><dt>Бронирование и&nbsp;отдел продаж</dt><dd><a href="tel:+79857698833">+7 (985) 769-88-33</a></dd></div>
+        <div><dt>Ресепшен</dt><dd><a href="tel:+79853954282">+7 (985) 395-42-82</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:clubbarin@mail.ru">clubbarin@mail.ru</a></dd></div>
+      </dl>
+      <div class="acts" data-rise><a class="btn" href="https://clubbarin.ru/?tl-booking-open=true">Забронировать<small>свободные даты онлайн</small></a><a class="more" href="https://t.me/hotelclubbarin">Написать в&nbsp;Telegram</a></div>
+    </div>
+  </div>
+  <footer class="close">
+    <i class="mk e"></i><i class="mk f" data-dot="big"></i>
+    <p class="name">Барин</p>
+    <div class="note"><span>Концепт сайта загородного клуба «Барин» от&nbsp;студии Termen</span><span>Фото&nbsp;— с&nbsp;сайта клуба clubbarin.ru</span></div>
+  </footer>
+</section>
+
 <script src="v.js"></script>
 <script>
 // entrance once the fonts are in, and a slight depth between the two cards under the cursor
@@ -76,6 +200,7 @@
   });
 })();
 </script>
+<script src="full.js"></script>
 <script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
