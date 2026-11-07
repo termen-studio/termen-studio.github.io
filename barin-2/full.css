@@ -33,7 +33,7 @@ h2, h3 { margin: 0; }
 
 /* the thread: one path over the whole page, drawn up to the reading line */
 .thread { position: absolute; left: 0; top: 0; width: 100%; z-index: 1; pointer-events: none; overflow: visible; }
-.thread path { fill: none; stroke: var(--gold); stroke-width: 1.2; opacity: .62; transition: stroke-dashoffset .8s var(--ease); }
+.thread path { fill: none; stroke: var(--gold); stroke-width: 1.7; opacity: .78; transition: stroke-dashoffset .8s var(--ease); }
 .thread circle { fill: var(--gold); opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.2); transition: opacity .5s var(--ease), transform .8s var(--ease); }
 .thread circle.lit { opacity: 1; transform: none; }
 .mk { position: absolute; width: 0; height: 0; }

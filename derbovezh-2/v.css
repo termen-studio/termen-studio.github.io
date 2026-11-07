@@ -49,8 +49,8 @@ p { margin: 0; }
 
 /* thin gold lines (7.11, his idea): a rule under the header and a vertical one down the photo side that passes behind the second card,
    a dot where they meet; they draw themselves in once the page is ready (html.go) */
-.bar::after { content: ""; position: absolute; left: var(--m); right: var(--m); bottom: 0; height: 1px; background: var(--gold); opacity: .55; transform-origin: 0 50%; }
-.stack::before { content: ""; position: absolute; z-index: 0; left: 4.5%; top: 0; bottom: 0; width: 1px; background: var(--gold); opacity: .55; transform-origin: 50% 0; }
+.bar::after { content: ""; position: absolute; left: var(--m); right: var(--m); bottom: 0; height: 1.5px; background: var(--gold); opacity: .7; transform-origin: 0 50%; }
+.stack::before { content: ""; position: absolute; z-index: 0; left: 4.5%; top: 0; bottom: 0; width: 1.5px; background: var(--gold); opacity: .7; transform-origin: 50% 0; }
 .stack::after { content: ""; position: absolute; z-index: 1; left: 4.5%; top: 0; width: 7px; height: 7px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--gold); }
 .stack .small { z-index: 2; }
 .js .bar::after { transform: scaleX(0); transition: transform 1.4s var(--ease) .2s; }
