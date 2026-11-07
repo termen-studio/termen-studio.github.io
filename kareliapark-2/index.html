@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Карелия Парк» · концепт сайта</title>
+<link rel="stylesheet" href="v.css">
+<link rel="stylesheet" href="full.css">
+<style>
+/* Карелия Парк, full concept (8.11) on the Барин template: first screen in the «Буклет» layout, chapters from full.css. */
+.hero { display: grid; grid-template-columns: 40fr 60fr; column-gap: 4vw; height: calc(100svh - clamp(56px, 4.6vw, 104px)); min-height: 560px; padding: 0 var(--m) var(--m); }
+.copy { display: flex; flex-direction: column; justify-content: center; padding-bottom: 4vh; }
+.copy h1 { font-size: clamp(44px, 5.1vw, 156px); line-height: .98; margin: 1.6vw 0 2vw; }
+.copy .row { display: flex; align-items: center; gap: 1.6vw; flex-wrap: wrap; margin-top: 2.6vw; }
+.stack { position: relative; }
+.big { position: absolute; inset: 0 0 0 9%; border-radius: clamp(12px, 1vw, 22px); overflow: hidden; box-shadow: 0 2.4vw 6vw rgba(0, 0, 0, .45); }
+.big img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+.big .chip { position: absolute; left: 50%; top: 40%; }
+.bar .tel { white-space: nowrap; }
+.small { position: absolute; left: 0; bottom: 7%; width: 31%; }
+.small figure { margin: 0; border-radius: clamp(10px, .8vw, 18px); overflow: hidden; box-shadow: 0 1.6vw 4vw rgba(0, 0, 0, .5); outline: clamp(4px, .35vw, 8px) solid var(--forest); }
+.small img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; }
+.small .chip { margin-top: 1vw; }
+.js .in-1, .js .in-2, .js .in-3, .js .in-4 { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .big.in-5 { opacity: 0; transform: scale(1.03); transition: opacity 1.2s var(--ease), transform 1.6s var(--ease); }
+.js .small.in-6 { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease) .5s, transform 1.2s var(--ease) .5s; }
+.js.go .in-1, .js.go .in-2, .js.go .in-3, .js.go .in-4, .js.go .big.in-5, .js.go .small.in-6 { opacity: 1; transform: none; }
+.in-2 { transition-delay: .08s !important; } .in-3 { transition-delay: .16s !important; } .in-4 { transition-delay: .24s !important; }
+@media (prefers-reduced-motion: reduce) { html.js:not(.fx) [class*="in-"] { opacity: 1 !important; transform: none !important; transition: none !important; } }
+@media (max-width: 820px) {
+  .hero { display: block; height: auto; padding: 0 var(--m) 40px; }
+  .copy { padding: 10px 0 34px; }
+  .copy h1 { font-size: 11vw; margin: 12px 0 16px; }
+  .copy .row { margin-top: 22px; gap: 16px; }
+  .stack { height: 118vw; }
+  .big { inset: 0 0 18% 0; }
+  .big .chip { left: 6%; top: 6%; }
+  .bar { flex-wrap: wrap; row-gap: 6px; }
+  .bar .brand { letter-spacing: .12em; }
+  .small { width: 54%; left: 6%; bottom: 0; }
+}
+/* page specifics: the halls list reuses the timeline, the long name closes the page smaller */
+.halls b { font-family: var(--display); font-weight: 500; color: var(--gold); font-size: clamp(28px, 2.2vw, 66px); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.close .name { font-size: 11.6vw; }
+.formats span { max-width: 14ch; }
+.halls li { grid-template-columns: clamp(120px, 11vw, 320px) 1fr; }
+@media (max-width: 820px) { .halls li { grid-template-columns: 124px 1fr; } }
+
+/* palettes taken from the photographs (8.11 test): ?pal=1 Ладога, 2 Гранит, 3 Белые ночи */
+.chip { background: var(--chipbg, rgba(19, 38, 29, .86)); }
+.venues li, .venues li:last-child, .visit dl div { border-color: var(--hair, rgba(201, 153, 94, .28)); }
+html.p1 { --forest: #14202a; --forest-2: #1c2b37; --gold: #d08a5c; --gold-2: #e3a47a; --paper: #f1eee9; --soft: rgba(241, 238, 233, .74);
+  --cream: #e8ebea; --brown: #1b2830; --brown-soft: rgba(27, 40, 48, .78); --gold-ink: #a4553a; --chipbg: rgba(20, 32, 42, .86); --hair: rgba(208, 138, 92, .3); }
+html.p2 { --forest: #1b2023; --forest-2: #252b2f; --gold: #b95546; --gold-2: #c96c5e; --paper: #efece7; --soft: rgba(239, 236, 231, .74);
+  --cream: #ebe9e4; --brown: #22272a; --brown-soft: rgba(34, 39, 42, .78); --gold-ink: #883b30; --chipbg: rgba(27, 32, 35, .86); --hair: rgba(185, 85, 70, .34); }
+/* the house's red wood as the accent (sampled from big.jpg, 8.11), and a slightly heavier line through the page */
+.thread path { stroke-width: 1.7; opacity: .78; }
+.bar::after { height: 1.5px; opacity: .7; } .stack::before { width: 1.5px; opacity: .7; }
+html.p3 { --forest: #eef0ee; --forest-2: #e1e6e5; --gold: #b4553a; --gold-2: #c76a4d; --paper: #15222b; --soft: rgba(21, 34, 43, .76);
+  --cream: #15222b; --brown: #eef0ee; --brown-soft: rgba(238, 240, 238, .8); --gold-ink: #df9371; --chipbg: rgba(238, 240, 238, .92); --hair: rgba(180, 85, 58, .3); }
+html.p3 .btn { color: #fff; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#">База отдыха «Карелия Парк»</a>
+  <nav><a href="#doma">Дома</a><a href="#ladoga">Катера и Валаам</a><a href="#sauna">Сауна и чан</a><a href="#zima">Развлечения</a><a href="#kontakty">Как добраться</a></nav>
+  <a class="tel" href="tel:+79212213968">+7 921 221-39-68</a>
+</header>
+<section class="hero">
+  <div class="copy">
+    <p class="kicker in-1">База отдыха · Ладожские шхеры, Карелия</p>
+    <h1 class="in-2">Свой дом <em>у&nbsp;Ладоги</em></h1>
+    <p class="lead in-3">Дома с&nbsp;сауной, террасой и&nbsp;чаном на&nbsp;первой линии Ладожского озера. Минута до&nbsp;пирса, катера без капитана и&nbsp;прогулки на&nbsp;Валаам.</p>
+    <div class="row in-4"><a class="btn" href="https://kareliapark.ru/?znms_widget_open=7845">Выбрать даты<small>дома от&nbsp;8&nbsp;000&nbsp;₽ в&nbsp;сутки</small></a><p class="live" data-at="61.66,31.17,в «Карелия Парке»" hidden></p></div>
+  </div>
+  <div class="stack">
+    <div class="big in-5"><img src="media/big.jpg" alt="Современный дом с панорамными окнами на берегу Ладожского озера" width="2560" height="1516"><span class="chip"><i></i>Первая линия Ладоги</span></div>
+    <div class="small in-6"><figure><img src="media/small.jpg" alt="Дома базы вечером, в окнах горит свет" width="1100" height="825"></figure><span class="chip">Дома с&nbsp;сауной и&nbsp;террасой</span></div>
+  </div>
+</section>
+
+<svg class="thread" aria-hidden="true"><path d=""/></svg>
+
+<section class="doma" id="doma">
+  <i class="mk a" data-dot></i>
+  <p class="kicker" data-rise>Дома</p>
+  <h2 class="caps" data-rise>Дома <em>у</em> Ладоги</h2>
+  <p class="lead2" data-rise>Коттеджи в&nbsp;скандинавском и&nbsp;альпийском стиле с&nbsp;панорамными окнами. В&nbsp;каждом&nbsp;— терраса, кухня, Wi-Fi, а&nbsp;у&nbsp;дома&nbsp;— мангал и&nbsp;гамак.</p>
+  <div class="arches">
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-aframe.jpg" alt="Треугольный дом с подсветкой в ночном лесу" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Шестиместный дом</h3><p class="meta">75 м² · от 12 000 ₽</p><p>Большая терраса, сауна, камин и&nbsp;банный чан рядом с&nbsp;домом.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-tree.jpg" alt="Дом на дереве в зимнем лесу" width="1150" height="1878" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Дом на&nbsp;дереве</h3><p class="meta">27 м² · 2 гостя · от 8 000 ₽</p><p>Для двоих: терраса в&nbsp;лесу и&nbsp;банный чан.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-big.jpg" alt="Гостиная большого дома с лестницей на второй уровень" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Большой дом</h3><p class="meta">98 м² · 6+2 гостей · от 12 000 ₽</p><p>Две спальни, камин, сауна и&nbsp;чан&nbsp;— для семьи или компании друзей.</p></figcaption>
+    </figure>
+  </div>
+  <p class="all" data-rise><a class="more" href="https://kareliapark.ru/#houses">Все дома и&nbsp;цены</a></p>
+  <i class="mk b"></i>
+</section>
+
+<section class="svadby" id="ladoga">
+  <div class="wide" data-par>
+    <img src="media/ladoga.jpg" alt="Деревянный пирс с катерами на Ладожском озере" width="2800" height="1868" loading="lazy">
+    <div class="title">
+      <p class="kicker" data-rise>Катера, шхеры и&nbsp;Валаам</p>
+      <h2 class="caps" data-rise>Ладога <span class="pill" data-rise><img src="media/ladoga-pill.jpg" alt="" width="700" height="219"></span><br>с&nbsp;нашего <em>пирса</em></h2>
+    </div>
+  </div>
+  <div class="day cols">
+    <div class="left">
+      <h3 data-rise>Минута от&nbsp;дома до&nbsp;воды</h3>
+      <p class="lead2" data-rise>База стоит в&nbsp;восьмикилометровой шхере национального парка «Ладожские шхеры». Берёте катер и&nbsp;идёте сами&nbsp;— или капитан везёт, показывает и&nbsp;рассказывает.</p>
+      <div class="formats" data-rise>
+        <div><b>6</b><span>катеров и&nbsp;лодок без капитана</span></div>
+        <div><b>1,5</b><span>часа на&nbsp;катере до&nbsp;Валаама</span></div>
+      </div>
+      <ul class="perks" data-rise>
+        <li>Прогулки с&nbsp;пирса каждый день</li>
+        <li>Лодки с&nbsp;маленьким и&nbsp;большим мотором и&nbsp;на&nbsp;вёслах</li>
+        <li>Рыбалка с&nbsp;пирса со&nbsp;своими удочками</li>
+      </ul>
+      <a class="btn" href="tel:+79212213968" data-rise>Забронировать прогулку<small>по телефону, круглосуточно</small></a>
+    </div>
+    <ol class="timeline halls">
+      <li><i class="mk" data-dot data-turn="h"></i><b>5 000</b><span>остров Валаам: 6 часов, из&nbsp;них 3 на&nbsp;острове</span></li>
+      <li><i class="mk" data-dot></i><b>2 000</b><span>Ладожские шхеры с&nbsp;капитаном</span></li>
+      <li><i class="mk" data-dot></i><b>4 000</b><span>катер без капитана, первый час</span></li>
+      <li><i class="mk" data-dot></i><b>2 000</b><span>лодка ПВХ с&nbsp;мотором, час</span></li>
+      <li><i class="mk" data-dot></i><b>500</b><span>лодка на&nbsp;вёслах, час</span></li>
+      <li class="next">рублей · цены с&nbsp;сайта базы</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bani" id="sauna">
+  <i class="mk" data-dot></i>
+  <div class="text">
+    <figure class="thumb" data-rise><img src="media/thumb.jpg" alt="Банный чан на террасе у дома" width="800" height="800" loading="lazy"></figure>
+    <h2 class="caps" data-rise>Сауна <em>в&nbsp;каждом</em> доме</h2>
+    <p class="lead2" data-rise>Жаркая сауна прямо в&nbsp;доме, горячий чан под открытым небом и&nbsp;терраса с&nbsp;видом на&nbsp;Ладогу и&nbsp;скалу Импилахти.</p>
+    <ul class="programs" data-rise>
+      <li><b>Сауна</b><span>жаркая, прямо в&nbsp;доме</span><strong>в&nbsp;доме</strong></li>
+      <li><b>Банный чан</b><span>у&nbsp;домов от&nbsp;6 гостей, греется около 4 часов</span><strong>4&nbsp;000&nbsp;₽</strong></li>
+      <li><b>Мангал и&nbsp;гамак</b><span>своя зона у&nbsp;каждого дома</span><strong>у&nbsp;дома</strong></li>
+      <li><b>Завтраки</b><span>обед и&nbsp;ужин по&nbsp;запросу, доставка продуктов</span><strong>есть</strong></li>
+    </ul>
+    <p class="fine" data-rise>Заезд с&nbsp;15:00 · выезд до&nbsp;12:00 · можно с&nbsp;питомцем</p>
+  </div>
+  <div class="photo" data-par><img src="media/fire.jpg" alt="Огонь в мангале у дома" width="1600" height="2000" loading="lazy"></div>
+</section>
+
+<section class="restoran cols" id="zima">
+  <i class="mk" data-dot></i>
+  <div class="pics">
+    <div class="tall" data-par><img src="media/winter.jpg" alt="Дом в гирляндах среди снега" width="1500" height="1875" loading="lazy"></div>
+    <figure class="dish" data-rise><div class="ph"><img src="media/kamin.jpg" alt="Вечер у камина с бокалом вина" width="900" height="675" loading="lazy"></div><figcaption class="chip"><i></i>Вечер у&nbsp;камина</figcaption></figure>
+  </div>
+  <div class="text">
+    <p class="kicker" data-rise>Развлечения</p>
+    <h2 class="caps" data-rise>Развлечения <em>круглый</em> год</h2>
+    <p class="lead2" data-rise>Летом&nbsp;— спуск со&nbsp;скалы и&nbsp;прыжок с&nbsp;высоты, зимой&nbsp;— снегоходы, аэролодка и&nbsp;лыжи. Бронируются одним звонком.</p>
+    <ul class="venues" data-rise>
+      <li><b>320<small>метров</small></b><span><strong>Троллей со&nbsp;скалы</strong>320 метров за&nbsp;20 секунд, взрослый&nbsp;— 2&nbsp;000&nbsp;₽</span></li>
+      <li><b>4&nbsp;000<small>₽ в&nbsp;час</small></b><span><strong>Снегоходы с&nbsp;санями</strong>зимой, а&nbsp;ещё аэролодка&nbsp;— 3&nbsp;500&nbsp;₽ в&nbsp;час</span></li>
+    </ul>
+    <p class="menu" data-rise><b>Роуп-джампинг 18+</b>&nbsp;— 3&nbsp;500&nbsp;₽. Для детей у&nbsp;троллея бесплатные качели, прокат лыж&nbsp;— 500&nbsp;₽.</p>
+    <p data-rise><a class="more" href="https://kareliapark.ru/#attractions">Все развлечения</a></p>
+  </div>
+</section>
+
+<section class="kontakty" id="kontakty">
+  <i class="mk" data-dot></i>
+  <div class="pano" data-par><img src="media/territoriya.jpg" alt="Вид с террасы большого дома на лес и озеро" width="2800" height="1698" loading="lazy"><span class="chip"><i></i>Вид с&nbsp;террасы большого дома</span></div>
+  <div class="visit cols">
+    <div>
+      <h2 class="caps" data-rise>Ждём вас <em>в&nbsp;Карелии</em></h2>
+      <address data-rise>Республика Карелия, посёлок Импилахти, деревня Кирконкюля, берег Ладожского озера<span>Национальный парк «Ладожские шхеры»</span></address>
+    </div>
+    <div class="right">
+      <dl data-rise>
+        <div><dt>Круглосуточно</dt><dd><a href="tel:+79212213968">+7 921 221-39-68</a></dd></div>
+        <div><dt>Второй телефон</dt><dd><a href="tel:+79215207172">+7 921 520-71-72</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:info@kareliapark.ru">info@kareliapark.ru</a></dd></div>
+      </dl>
+      <div class="acts" data-rise><a class="btn" href="https://kareliapark.ru/?znms_widget_open=7845">Забронировать дом<small>свободные даты онлайн</small></a><a class="more" href="https://kareliapark.ru/#location">Как добраться</a></div>
+    </div>
+  </div>
+  <footer class="close">
+    <i class="mk e"></i><i class="mk f" data-dot="big"></i>
+    <p class="name">Карелия Парк</p>
+    <div class="note"><span>Концепт сайта базы отдыха «Карелия Парк» от&nbsp;студии Termen</span><span>Фото&nbsp;— с&nbsp;сайта и&nbsp;страницы базы kareliapark.ru</span></div>
+  </footer>
+</section>
+
+<script>(() => { const p = new URLSearchParams(location.search).get('pal') || '2'; if (p) document.documentElement.classList.add('p' + p); })();</script>
+<script src="v.js"></script>
+<script>
+// entrance once the fonts are in, and a slight depth between the two cards under the cursor
+(() => {
+  const root = document.documentElement; root.classList.add('js');
+  const fx = new URLSearchParams(location.search).has('fx'); if (fx) root.classList.add('fx');
+  const go = () => requestAnimationFrame(() => root.classList.add('go'));
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(go); setTimeout(go, 1200);
+  if ((matchMedia('(prefers-reduced-motion: reduce)').matches && !fx) || !matchMedia('(pointer: fine)').matches) return;
+  const big = document.querySelector('.big img'), small = document.querySelector('.small');
+  addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    big.style.transform = `scale(1.04) translate(${x * -10}px, ${y * -8}px)`;
+    small.style.translate = `${x * 18}px ${y * 12}px`;
+  });
+})();
+</script>
+<script src="full.js"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
