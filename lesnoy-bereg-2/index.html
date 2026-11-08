@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Фермерская усадьба «Лесной берег» · концепт сайта</title>
+<link rel="stylesheet" href="v.css">
+<link rel="stylesheet" href="full.css">
+<style>
+/* Лесной берег, full concept (8.11) on the Барин template: first screen in the «Буклет» layout, chapters from full.css. */
+.hero { display: grid; grid-template-columns: 40fr 60fr; column-gap: 4vw; height: calc(100svh - clamp(56px, 4.6vw, 104px)); min-height: 560px; padding: 0 var(--m) var(--m); }
+.copy { display: flex; flex-direction: column; justify-content: center; padding-bottom: 4vh; }
+.copy h1 { font-size: clamp(44px, 5.1vw, 156px); line-height: .98; margin: 1.6vw 0 2vw; }
+.copy .row { display: flex; align-items: center; gap: 1.6vw; flex-wrap: wrap; margin-top: 2.6vw; }
+.stack { position: relative; }
+.big { position: absolute; inset: 0 0 0 9%; border-radius: clamp(12px, 1vw, 22px); overflow: hidden; box-shadow: 0 2.4vw 6vw rgba(0, 0, 0, .45); }
+.big img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; }
+.big .chip { position: absolute; left: 44%; top: 66%; }
+.bar .tel { white-space: nowrap; }
+.small { position: absolute; left: 0; bottom: 7%; width: 31%; }
+.small figure { margin: 0; border-radius: clamp(10px, .8vw, 18px); overflow: hidden; box-shadow: 0 1.6vw 4vw rgba(0, 0, 0, .5); outline: clamp(4px, .35vw, 8px) solid var(--forest); }
+.small img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; }
+.small .chip { margin-top: 1vw; }
+.js .in-1, .js .in-2, .js .in-3, .js .in-4 { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .big.in-5 { opacity: 0; transform: scale(1.03); transition: opacity 1.2s var(--ease), transform 1.6s var(--ease); }
+.js .small.in-6 { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease) .5s, transform 1.2s var(--ease) .5s; }
+.js.go .in-1, .js.go .in-2, .js.go .in-3, .js.go .in-4, .js.go .big.in-5, .js.go .small.in-6 { opacity: 1; transform: none; }
+.in-2 { transition-delay: .08s !important; } .in-3 { transition-delay: .16s !important; } .in-4 { transition-delay: .24s !important; }
+@media (prefers-reduced-motion: reduce) { html.js:not(.fx) [class*="in-"] { opacity: 1 !important; transform: none !important; transition: none !important; } }
+@media (max-width: 820px) {
+  .hero { display: block; height: auto; padding: 0 var(--m) 40px; }
+  .copy { padding: 10px 0 34px; }
+  .copy h1 { font-size: 11vw; margin: 12px 0 16px; }
+  .copy .row { margin-top: 22px; gap: 16px; }
+  .stack { height: 118vw; }
+  .big { inset: 0 0 18% 0; }
+  .big .chip { left: 6%; top: 6%; }
+  .bar { flex-wrap: wrap; row-gap: 6px; }
+  .bar .brand { letter-spacing: .12em; }
+  .small { width: 54%; left: 6%; bottom: 0; }
+}
+/* page specifics: the halls list reuses the timeline, the long name closes the page smaller */
+.halls b { font-family: var(--display); font-weight: 500; color: var(--gold); font-size: clamp(28px, 2.2vw, 66px); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.close .name { font-size: 15vw; }
+.formats span { max-width: 14ch; }
+.halls li { grid-template-columns: clamp(120px, 11vw, 320px) 1fr; }
+@media (max-width: 820px) { .halls li { grid-template-columns: 124px 1fr; } }
+
+/* palette from their own photo (8.11): the deep evening river as the field, the warm sand of the beach in low sun as the accent */
+:root { --forest: #0d2233; --forest-2: #163044; --gold: #d2ae68; --gold-2: #e0c287; --paper: #f2efe7; --soft: rgba(242, 239, 231, .74);
+  --cream: #f2eee3; --brown: #13293a; --brown-soft: rgba(19, 41, 58, .78); --gold-ink: #866424; }
+.chip { background: rgba(13, 34, 51, .86); }
+.venues li, .venues li:last-child, .visit dl div { border-color: rgba(210, 174, 104, .3); }
+.halls li { grid-template-columns: clamp(170px, 14vw, 400px) 1fr; }
+@media (max-width: 820px) { .halls li { grid-template-columns: 150px 1fr; } }
+.close .name { font-size: 13vw; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#">Фермерская усадьба «Лесной берег»</a>
+  <nav><a href="#doma">Проживание</a><a href="#prazdniki">Новый год и группы</a><a href="#bani">Бани и пляж</a><a href="#ferma">Ферма и рыбалка</a><a href="#kontakty">Контакты</a></nav>
+  <a class="tel" href="tel:+79099454565">+7 909 945-45-65</a>
+</header>
+<section class="hero">
+  <div class="copy">
+    <p class="kicker in-1">Фермерская усадьба · Брейтовский район, на&nbsp;реке Сить</p>
+    <h1 class="in-2">Коттеджи <em>на&nbsp;берегу Сити</em></h1>
+    <p class="lead in-3">Свой лес, песчаный пляж и&nbsp;коттеджи на&nbsp;первой линии реки, которая впадает в&nbsp;Рыбинское море. 350&nbsp;км от&nbsp;Москвы.</p>
+    <div class="row in-4"><a class="btn" href="https://forestbeach.ru/booking/">Выбрать даты<small>скидки при брони на&nbsp;сайте</small></a><p class="live" data-at="58.23,37.87,в «Лесном береге»" hidden></p></div>
+  </div>
+  <div class="stack">
+    <div class="big in-5"><img src="media/big.jpg" alt="Причал с катером на реке Сить, луг и коттеджи среди берёз" width="2431" height="1620"><span class="chip"><i></i>Причал на&nbsp;Сити</span></div>
+    <div class="small in-6"><figure><img src="media/small.jpg" alt="Коттедж с панорамным остеклением среди берёз" width="1100" height="825"></figure><span class="chip">Коттеджи среди берёз</span></div>
+  </div>
+</section>
+
+<svg class="thread" aria-hidden="true"><path d=""/></svg>
+
+<section class="doma" id="doma">
+  <i class="mk a" data-dot></i>
+  <p class="kicker" data-rise>Проживание от&nbsp;4&nbsp;000&nbsp;₽ за&nbsp;ночь</p>
+  <h2 class="caps" data-rise>Дома <em>у</em> реки</h2>
+  <p class="lead2" data-rise>От&nbsp;номеров для двоих до&nbsp;просторных коттеджей с&nbsp;панорамным остеклением. Можно с&nbsp;собакой: усадьба DogFriendly, территория обработана от&nbsp;клещей.</p>
+  <div class="arches">
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-spa.jpg" alt="Комната SPA-дома с панорамным окном и террасой у реки" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>SPA-дом «Ситские традиции»</h3><p class="meta">2 гостя · от 12&nbsp;000&nbsp;₽</p><p>Единственный дом на&nbsp;самом берегу: своя дровяная сауна, терраса с&nbsp;шезлонгами и&nbsp;выход к&nbsp;воде.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-dom.jpg" alt="Коттедж с верандой среди берёз" width="1150" height="1878" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Коттеджи «Дубль дом»</h3><p class="meta">4 комнаты · от 9&nbsp;000&nbsp;₽</p><p>Для большой семьи или компании: веранда, беседка с&nbsp;мангалом и&nbsp;коптильней рядом.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-nomer.jpg" alt="Номер с расписными обоями и окном в лес" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>«А-ля Рус» и&nbsp;«Лесная сказка»</h3><p class="meta">номера · своя терраса</p><p>Отдельный вход и&nbsp;терраса у&nbsp;каждого номера, завтрак в&nbsp;ресторане уже включён.</p></figcaption>
+    </figure>
+  </div>
+  <p class="all" data-rise><a class="more" href="https://forestbeach.ru/booking/">Свободные даты и&nbsp;цены</a></p>
+  <i class="mk b"></i>
+</section>
+
+<section class="svadby" id="prazdniki">
+  <div class="wide" data-par>
+    <img src="media/prazdnik.jpg" alt="Концерт живой музыки в шатре усадьбы" width="2800" height="1575" loading="lazy">
+    <div class="title">
+      <p class="kicker" data-rise>Новый год 2027 и&nbsp;групповые заезды</p>
+      <h2 class="caps" data-rise>Новый год <span class="pill" data-rise><img src="media/prazdnik-pill.jpg" alt="" width="700" height="219"></span><br><em>по-лесному</em></h2>
+    </div>
+  </div>
+  <div class="day cols">
+    <div class="left">
+      <h3 data-rise>В&nbsp;год Козы&nbsp;— туда, где козы уже дома</h3>
+      <p class="lead2" data-rise>Праздничное застолье в&nbsp;ресторане, огромная живая ёлка под открытым небом, живая музыка и&nbsp;мастер-классы. А&nbsp;в&nbsp;любое время года принимаем корпоративные выезды, семейные лагеря и&nbsp;тематические смены.</p>
+      <div class="formats" data-rise>
+        <div><b>−10%</b><span>именинникам и&nbsp;молодожёнам</span></div>
+        <div><b>−10%</b><span>при проживании от&nbsp;7&nbsp;ночей</span></div>
+      </div>
+      <ul class="perks" data-rise>
+        <li>Скидки действуют только при бронировании с&nbsp;сайта</li>
+        <li>Банкетное меню для дней рождения и&nbsp;свадеб</li>
+        <li>Презентация для корпоративного заезда&nbsp;— по&nbsp;запросу</li>
+      </ul>
+      <a class="btn" href="tel:+79099454565" data-rise>Забронировать Новый год<small>+7 909 945-45-65</small></a>
+    </div>
+    <ol class="timeline halls">
+      <li><i class="mk" data-dot data-turn="h"></i><b>Ёлка</b><span>огромная живая ель под открытым небом</span></li>
+      <li><i class="mk" data-dot></i><b>Застолье</b><span>праздничный стол в&nbsp;ресторане «Дикий Барин»</span></li>
+      <li><i class="mk" data-dot></i><b>Музыка</b><span>живые концерты и&nbsp;песни у&nbsp;костра</span></li>
+      <li><i class="mk" data-dot></i><b>Мастер-классы</b><span>сувенир, сделанный своими руками</span></li>
+      <li class="next">в&nbsp;новогодней программе</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bani" id="bani">
+  <i class="mk" data-dot></i>
+  <div class="text">
+    <figure class="thumb" data-rise><img src="media/thumb.jpg" alt="Песчаный пляж с шезлонгами на берегу реки" width="800" height="800" loading="lazy"></figure>
+    <h2 class="caps" data-rise>Баня <em>с&nbsp;видом</em> на&nbsp;Сить</h2>
+    <p class="lead2" data-rise>Из&nbsp;парилки&nbsp;— панорамное окно на&nbsp;реку, с&nbsp;террасы&nbsp;— прямой выход к&nbsp;воде. Летом рядом песчаный пляж с&nbsp;шезлонгами и&nbsp;уличный бассейн.</p>
+    <ul class="programs" data-rise>
+      <li><b>Баня «Скандик»</b><span>панорамное окно из&nbsp;парилки, терраса, до&nbsp;4 гостей</span><strong>5&nbsp;000&nbsp;₽ / 2&nbsp;часа</strong></li>
+      <li><b>Баня «Ситские традиции»</b><span>русская баня с&nbsp;гостевой комнатой, до&nbsp;6 гостей</span><strong>7&nbsp;000&nbsp;₽ / 2&nbsp;часа</strong></li>
+      <li><b>Уличный бассейн</b><span>терраса с&nbsp;шезлонгами среди леса</span><strong>бесплатно</strong></li>
+      <li><b>Песчаный пляж</b><span>шезлонги и&nbsp;зонтики у&nbsp;реки</span><strong>для гостей</strong></li>
+    </ul>
+    <p class="fine" data-rise>При проживании от&nbsp;5 ночей&nbsp;— 2&nbsp;часа в&nbsp;бане «Скандик» и&nbsp;купеческое чаепитие в&nbsp;подарок</p>
+  </div>
+  <div class="photo" data-par><img src="media/banya.jpg" alt="Парилка бани с панорамным окном на реку" width="1600" height="2000" loading="lazy"></div>
+</section>
+
+<section class="restoran cols" id="ferma">
+  <i class="mk" data-dot></i>
+  <div class="pics">
+    <div class="tall" data-par><img src="media/ferma.jpg" alt="Альпака на лугу в агрозоопарке усадьбы" width="1500" height="1875" loading="lazy"></div>
+    <figure class="dish" data-rise><div class="ph"><img src="media/ryba.jpg" alt="Рыбаки с крупным судаком в лодке" width="900" height="675" loading="lazy"></div><figcaption class="chip"><i></i>Улов с&nbsp;Рыбинского моря</figcaption></figure>
+  </div>
+  <div class="text">
+    <p class="kicker" data-rise>Ферма, река и&nbsp;кухня</p>
+    <h2 class="caps" data-rise>Альпаки <em>и</em> трофейный сом</h2>
+    <p class="lead2" data-rise>В&nbsp;агрозоопарке живут альпаки, страусы, козы и&nbsp;гуси&nbsp;— захватите морковку и&nbsp;сушки. А&nbsp;рыбаков ждёт тихая Сить и&nbsp;широкое Рыбинское море.</p>
+    <ul class="venues" data-rise>
+      <li><b>7<small>км</small></b><span><strong>До&nbsp;Рыбинского моря</strong>на&nbsp;катере за&nbsp;щукой и&nbsp;трофейным сомом, для своего катера есть слип</span></li>
+      <li><b>0<small>м</small></b><span><strong>Сить у&nbsp;коттеджей</strong>рыбалка с&nbsp;берега и&nbsp;с&nbsp;лодки, прокат лодок и&nbsp;удочек, чистка и&nbsp;копчение рыбы</span></li>
+    </ul>
+    <p class="menu" data-rise><b>Ресторан «Дикий Барин»:</b> купеческое чаепитие с&nbsp;самоваром и&nbsp;пирогами, рыбацкий обед с&nbsp;ухой и&nbsp;щучьими котлетами, ярославская душепарка.</p>
+    <p data-rise><a class="more" href="https://forestbeach.ru/razvlechenie/">Все развлечения усадьбы</a></p>
+  </div>
+</section>
+
+<section class="kontakty" id="kontakty">
+  <i class="mk" data-dot></i>
+  <div class="pano" data-par><img src="media/territoriya.jpg" alt="Усадьба сверху: лес и излучина реки Сить" width="1920" height="1080" loading="lazy"><span class="chip"><i></i>Свой лес на&nbsp;берегу Сити</span></div>
+  <div class="visit cols">
+    <div>
+      <h2 class="caps" data-rise>Ждём вас <em>в&nbsp;«Лесном береге»</em></h2>
+      <address data-rise>Ярославская область, Брейтовский район, у&nbsp;села Черкасово, на&nbsp;берегу реки Сить<span>350 км от&nbsp;Москвы · для навигатора 58.234742, 37.866684</span></address>
+    </div>
+    <div class="right">
+      <dl data-rise>
+        <div><dt>Бронирование</dt><dd><a href="tel:+79099454565">+7 909 945-45-65</a></dd></div>
+        <div><dt>Telegram и&nbsp;WhatsApp</dt><dd><a href="https://t.me/+79099454565">тот же номер</a></dd></div>
+        <div><dt>Администратор</dt><dd>в&nbsp;ресторане</dd></div>
+      </dl>
+      <div class="acts" data-rise><a class="btn" href="https://forestbeach.ru/booking/">Забронировать<small>скидки только на&nbsp;сайте</small></a><a class="more" href="https://vk.com/forestbeachru">ВКонтакте</a></div>
+    </div>
+  </div>
+  <footer class="close">
+    <i class="mk e"></i><i class="mk f" data-dot="big"></i>
+    <p class="name">Лесной берег</p>
+    <div class="note"><span>Концепт сайта фермерской усадьбы «Лесной берег» от&nbsp;студии Termen</span><span>Фото&nbsp;— с&nbsp;сайта усадьбы forestbeach.ru</span></div>
+  </footer>
+</section>
+
+<script src="v.js"></script>
+<script>
+// entrance once the fonts are in, and a slight depth between the two cards under the cursor
+(() => {
+  const root = document.documentElement; root.classList.add('js');
+  const fx = new URLSearchParams(location.search).has('fx'); if (fx) root.classList.add('fx');
+  const go = () => requestAnimationFrame(() => root.classList.add('go'));
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(go); setTimeout(go, 1200);
+  if ((matchMedia('(prefers-reduced-motion: reduce)').matches && !fx) || !matchMedia('(pointer: fine)').matches) return;
+  const big = document.querySelector('.big img'), small = document.querySelector('.small');
+  addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    big.style.transform = `scale(1.04) translate(${x * -10}px, ${y * -8}px)`;
+    small.style.translate = `${x * 18}px ${y * 12}px`;
+  });
+})();
+</script>
+<script src="full.js"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
