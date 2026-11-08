@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>База отдыха «Командор» · концепт сайта</title>
+<link rel="stylesheet" href="v.css">
+<link rel="stylesheet" href="full.css">
+<style>
+/* Командор, full concept (8.11) on the Барин template: first screen in the «Буклет» layout, chapters from full.css. */
+.hero { display: grid; grid-template-columns: 40fr 60fr; column-gap: 4vw; height: calc(100svh - clamp(56px, 4.6vw, 104px)); min-height: 560px; padding: 0 var(--m) var(--m); }
+.copy { display: flex; flex-direction: column; justify-content: center; padding-bottom: 4vh; }
+.copy h1 { font-size: clamp(44px, 5.1vw, 156px); line-height: .98; margin: 1.6vw 0 2vw; }
+.copy .row { display: flex; align-items: center; gap: 1.6vw; flex-wrap: wrap; margin-top: 2.6vw; }
+.stack { position: relative; }
+.big { position: absolute; inset: 0 0 0 9%; border-radius: clamp(12px, 1vw, 22px); overflow: hidden; box-shadow: 0 2.4vw 6vw rgba(0, 0, 0, .45); }
+.big img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+.big .chip { position: absolute; left: 50%; top: 40%; }
+.bar .tel { white-space: nowrap; }
+.small { position: absolute; left: 0; bottom: 7%; width: 31%; }
+.small figure { margin: 0; border-radius: clamp(10px, .8vw, 18px); overflow: hidden; box-shadow: 0 1.6vw 4vw rgba(0, 0, 0, .5); outline: clamp(4px, .35vw, 8px) solid var(--forest); }
+.small img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; }
+.small .chip { margin-top: 1vw; }
+.js .in-1, .js .in-2, .js .in-3, .js .in-4 { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .big.in-5 { opacity: 0; transform: scale(1.03); transition: opacity 1.2s var(--ease), transform 1.6s var(--ease); }
+.js .small.in-6 { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease) .5s, transform 1.2s var(--ease) .5s; }
+.js.go .in-1, .js.go .in-2, .js.go .in-3, .js.go .in-4, .js.go .big.in-5, .js.go .small.in-6 { opacity: 1; transform: none; }
+.in-2 { transition-delay: .08s !important; } .in-3 { transition-delay: .16s !important; } .in-4 { transition-delay: .24s !important; }
+@media (prefers-reduced-motion: reduce) { html.js:not(.fx) [class*="in-"] { opacity: 1 !important; transform: none !important; transition: none !important; } }
+@media (max-width: 820px) {
+  .hero { display: block; height: auto; padding: 0 var(--m) 40px; }
+  .copy { padding: 10px 0 34px; }
+  .copy h1 { font-size: 11vw; margin: 12px 0 16px; }
+  .copy .row { margin-top: 22px; gap: 16px; }
+  .stack { height: 118vw; }
+  .big { inset: 0 0 18% 0; }
+  .big .chip { left: 6%; top: 6%; }
+  .bar { flex-wrap: wrap; row-gap: 6px; }
+  .bar .brand { letter-spacing: .12em; }
+  .small { width: 54%; left: 6%; bottom: 0; }
+}
+/* page specifics: the halls list reuses the timeline, the long name closes the page smaller */
+.halls b { font-family: var(--display); font-weight: 500; color: var(--gold); font-size: clamp(28px, 2.2vw, 66px); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.close .name { font-size: 15vw; }
+.formats span { max-width: 14ch; }
+.halls li { grid-template-columns: clamp(120px, 11vw, 320px) 1fr; }
+@media (max-width: 820px) { .halls li { grid-template-columns: 124px 1fr; } }
+
+/* palette from their own photo (8.11): the gulf at dusk as the field, the sunlit pine wood as the accent, the dunes as the cream chapter */
+:root { --forest: #101f28; --forest-2: #182a34; --gold: #d49a5e; --gold-2: #e0ae7b; --paper: #f2eee8; --soft: rgba(242, 238, 232, .74);
+  --cream: #f1eadf; --brown: #152832; --brown-soft: rgba(21, 40, 50, .78); --gold-ink: #8e5729; }
+.chip { background: rgba(16, 31, 40, .86); }
+.venues li, .venues li:last-child, .visit dl div { border-color: rgba(212, 154, 94, .3); }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#">База отдыха «Командор»</a>
+  <nav><a href="#doma">Коттеджи и номера</a><a href="#svadby">Праздники</a><a href="#glamping">Глэмпинг и сауна</a><a href="#zaliv">У залива</a><a href="#kontakty">Контакты</a></nav>
+  <a class="tel" href="tel:+79117016035">+7 911 701-60-35</a>
+</header>
+<section class="hero">
+  <div class="copy">
+    <p class="kicker in-1">База отдыха · Финский залив, Ленинградская область</p>
+    <h1 class="in-2">Отдых <em>в&nbsp;дюнах Финского залива</em></h1>
+    <p class="lead in-3">Деревянные коттеджи в&nbsp;сосновом лесу, три из&nbsp;них&nbsp;— на&nbsp;первой линии залива. Пологий песчаный пляж в&nbsp;40&nbsp;км от&nbsp;КАД.</p>
+    <div class="row in-4"><a class="btn" href="https://bazakomandor.ru/booking">Выбрать даты<small>коттеджи у&nbsp;самого берега</small></a><p class="live" data-at="59.96,29.06,в «Командоре»" hidden></p></div>
+  </div>
+  <div class="stack">
+    <div class="big in-5"><img src="media/big.jpg" alt="Двухэтажный деревянный дом с верандой среди сосен у залива" width="2560" height="1440"><span class="chip"><i></i>Сосновый лес у&nbsp;залива</span></div>
+    <div class="small in-6"><figure><img src="media/small.jpg" alt="Домик с панорамным окном на песке среди сосен" width="1100" height="825"></figure><span class="chip">Первая береговая линия</span></div>
+  </div>
+</section>
+
+<svg class="thread" aria-hidden="true"><path d=""/></svg>
+
+<section class="doma" id="doma">
+  <i class="mk a" data-dot></i>
+  <p class="kicker" data-rise>Коттеджи и&nbsp;номера</p>
+  <h2 class="caps" data-rise>Дома <em>у</em> залива</h2>
+  <p class="lead2" data-rise>Шесть коттеджей и&nbsp;шесть номеров в&nbsp;деревянном отеле. В&nbsp;каждом свой санузел с&nbsp;душем, у&nbsp;коттеджей&nbsp;— зона для барбекю и&nbsp;большой стол на&nbsp;улице.</p>
+  <div class="arches">
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-besedka.jpg" alt="Домик с панорамным окном и террасой на песке" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Домики у&nbsp;моря</h3><p class="meta">2 гостя · первая линия</p><p>«Бригантина», «Каравелла» и&nbsp;«Ладья»: панорамное окно на&nbsp;залив и&nbsp;северное сияние, кухня и&nbsp;терраса с&nbsp;мангалом.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-dom.jpg" alt="Двухэтажный деревянный дом среди сосен" width="1150" height="1879" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Дома Совы и&nbsp;Медведя</h3><p class="meta">3 спальни · 7 гостей</p><p>Два этажа, кухня-гостиная, крытая терраса и&nbsp;барбекю под навесом. Можно с&nbsp;питомцем.</p></figcaption>
+    </figure>
+    <figure class="arch">
+      <div class="frame"><div class="win mask" data-rise><img src="media/arch-nomer.jpg" alt="Номер отеля с деревянными стенами и круглым столом у окна" width="1150" height="1610" loading="lazy"></div></div>
+      <figcaption data-rise><h3>Номера в&nbsp;отеле</h3><p class="meta">6 номеров · до 4 гостей</p><p>Деревянное здание с&nbsp;каминным залом: номера для двоих и&nbsp;для семьи.</p></figcaption>
+    </figure>
+  </div>
+  <p class="all" data-rise><a class="more" href="https://bazakomandor.ru/booking">Свободные даты и&nbsp;цены</a></p>
+  <i class="mk b"></i>
+</section>
+
+<section class="svadby" id="svadby">
+  <div class="wide" data-par>
+    <img src="media/svadba.jpg" alt="Банкетный стол в кафе с панорамными окнами на залив" width="2800" height="2100" loading="lazy">
+    <div class="title">
+      <p class="kicker" data-rise>Свадьбы и&nbsp;праздники</p>
+      <h2 class="caps" data-rise>Праздник <span class="pill" data-rise><img src="media/svadba-pill.jpg" alt="" width="700" height="219"></span><br>с&nbsp;видом на&nbsp;<em>залив</em></h2>
+    </div>
+  </div>
+  <div class="day cols">
+    <div class="left">
+      <h3 data-rise>Кафе «4&nbsp;румба» у&nbsp;самого пляжа</h3>
+      <p class="lead2" data-rise>Зал с&nbsp;панорамными окнами на&nbsp;Финский залив, терраса и&nbsp;выход к&nbsp;пляжу. Перед кафе&nbsp;— площадка для шатра и&nbsp;свадебной арки.</p>
+      <div class="formats" data-rise>
+        <div><b>60</b><span>гостей в&nbsp;кафе</span></div>
+        <div><b>100</b><span>м² террасы у&nbsp;глэмпинга</span></div>
+      </div>
+      <ul class="perks" data-rise>
+        <li>Русская кухня, рыба и&nbsp;морепродукты севера</li>
+        <li>Профессиональный звук и&nbsp;два экрана по&nbsp;85&nbsp;дюймов</li>
+        <li>Свадьбы, выездные регистрации, корпоративы, детские праздники</li>
+      </ul>
+      <a class="btn" href="mailto:admin@bazakomandor.ru" data-rise>Обсудить праздник<small>admin@bazakomandor.ru</small></a>
+    </div>
+    <ol class="timeline halls">
+      <li><i class="mk" data-dot data-turn="h"></i><b>60</b><span>кафе «4&nbsp;румба» с&nbsp;окнами на&nbsp;залив</span></li>
+      <li><i class="mk" data-dot></i><b>30</b><span>беседка с&nbsp;камином</span></li>
+      <li><i class="mk" data-dot></i><b>20</b><span>глэмпинг «Атмосфера»: сфера и&nbsp;терраса</span></li>
+      <li><i class="mk" data-dot></i><b>Столы</b><span>у&nbsp;каждого свой мангал, есть с&nbsp;навесом</span></li>
+      <li class="next">гостей на&nbsp;площадке</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bani" id="glamping">
+  <i class="mk" data-dot></i>
+  <div class="text">
+    <figure class="thumb" data-rise><img src="media/thumb.jpg" alt="Мангальная зона среди сосен у залива" width="800" height="800" loading="lazy"></figure>
+    <h2 class="caps" data-rise>Сфера <em>у</em> залива</h2>
+    <p class="lead2" data-rise>Отапливаемый глэмпинг с&nbsp;террасой на&nbsp;сто метров и&nbsp;видом на&nbsp;залив и&nbsp;северное сияние. Рядом&nbsp;— сауна, беседка с&nbsp;камином и&nbsp;мангальные зоны.</p>
+    <ul class="programs" data-rise>
+      <li><b>Глэмпинг «Атмосфера»</b><span>сфера с&nbsp;отоплением, зона для диджея</span><strong>до&nbsp;20 гостей</strong></li>
+      <li><b>Сауна</b><span>зона отдыха и&nbsp;свой огороженный дворик</span><strong>от&nbsp;3 часов</strong></li>
+      <li><b>Беседка с&nbsp;камином</b><span>для семейных и&nbsp;детских праздников</span><strong>до&nbsp;30 гостей</strong></li>
+      <li><b>Мангальные зоны</b><span>столы с&nbsp;видом на&nbsp;залив, летом и&nbsp;зимой</span><strong>свой мангал</strong></li>
+    </ul>
+    <p class="fine" data-rise>Полупансион для гостей · Wi-Fi · круглосуточная стойка регистрации</p>
+  </div>
+  <div class="photo" data-par><img src="media/glamping.jpg" alt="Прозрачная сфера глэмпинга и стеклянная терраса на закате" width="1600" height="2000" loading="lazy"></div>
+</section>
+
+<section class="restoran cols" id="zaliv">
+  <i class="mk" data-dot></i>
+  <div class="pics">
+    <div class="tall" data-par><img src="media/zaliv.jpg" alt="Закат над Финским заливом, стол на песке среди сосен" width="1500" height="1875" loading="lazy"></div>
+    <figure class="dish" data-rise><div class="ph"><img src="media/sosny.jpg" alt="Деревянный коттедж среди сосен" width="900" height="675" loading="lazy"></div><figcaption class="chip"><i></i>Сосновый лес</figcaption></figure>
+  </div>
+  <div class="text">
+    <p class="kicker" data-rise>Круглый год</p>
+    <h2 class="caps" data-rise>Залив <em>в&nbsp;любое</em> время года</h2>
+    <p class="lead2" data-rise>Летом&nbsp;— пологий пляж и&nbsp;смолистый воздух, осенью&nbsp;— грибы и&nbsp;ягоды, зимой&nbsp;— лыжи и&nbsp;долгие прогулки по&nbsp;берегу.</p>
+    <ul class="venues" data-rise>
+      <li><b>20<small>км</small></b><span><strong>Велодорожка вдоль залива</strong>от&nbsp;базы до&nbsp;Приморского парка и&nbsp;городского пляжа</span></li>
+      <li><b>5<small>км</small></b><span><strong>Сосновый Бор</strong>Андерсенград и&nbsp;парк «Белые пески»</span></li>
+    </ul>
+    <p class="menu" data-rise><b>Напротив базы&nbsp;— биатлонная трасса</b>, а&nbsp;у&nbsp;Приморского парка&nbsp;— база для виндсёрфинга.</p>
+    <p data-rise><a class="more" href="https://bazakomandor.ru/services">Все услуги базы</a></p>
+  </div>
+</section>
+
+<section class="kontakty" id="kontakty">
+  <i class="mk" data-dot></i>
+  <div class="pano" data-par><img src="media/territoriya.jpg" alt="Кафе базы с террасой среди сосен" width="2800" height="1575" loading="lazy"><span class="chip"><i></i>Кафе «4&nbsp;румба» и&nbsp;терраса</span></div>
+  <div class="visit cols">
+    <div>
+      <h2 class="caps" data-rise>Ждём вас <em>в&nbsp;«Командоре»</em></h2>
+      <address data-rise>Ленинградская область, Ломоносовский район, у&nbsp;Соснового Бора, первая линия Финского залива<span>40 км от&nbsp;съезда с&nbsp;КАД · для навигатора 59.956641, 29.063611</span></address>
+    </div>
+    <div class="right">
+      <dl data-rise>
+        <div><dt>Бронирование</dt><dd><a href="tel:+79117016035">+7 911 701-60-35</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:admin@bazakomandor.ru">admin@bazakomandor.ru</a></dd></div>
+        <div><dt>Стойка регистрации</dt><dd>круглосуточно</dd></div>
+      </dl>
+      <div class="acts" data-rise><a class="btn" href="https://bazakomandor.ru/booking">Забронировать<small>свободные даты онлайн</small></a><a class="more" href="https://vk.com/bazakomandor">ВКонтакте</a></div>
+    </div>
+  </div>
+  <footer class="close">
+    <i class="mk e"></i><i class="mk f" data-dot="big"></i>
+    <p class="name">Командор</p>
+    <div class="note"><span>Концепт сайта базы отдыха «Командор» от&nbsp;студии Termen</span><span>Фото&nbsp;— с&nbsp;сайта базы bazakomandor.ru</span></div>
+  </footer>
+</section>
+
+<script src="v.js"></script>
+<script>
+// entrance once the fonts are in, and a slight depth between the two cards under the cursor
+(() => {
+  const root = document.documentElement; root.classList.add('js');
+  const fx = new URLSearchParams(location.search).has('fx'); if (fx) root.classList.add('fx');
+  const go = () => requestAnimationFrame(() => root.classList.add('go'));
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(go); setTimeout(go, 1200);
+  if ((matchMedia('(prefers-reduced-motion: reduce)').matches && !fx) || !matchMedia('(pointer: fine)').matches) return;
+  const big = document.querySelector('.big img'), small = document.querySelector('.small');
+  addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    big.style.transform = `scale(1.04) translate(${x * -10}px, ${y * -8}px)`;
+    small.style.translate = `${x * 18}px ${y * 12}px`;
+  });
+})();
+</script>
+<script src="full.js"></script>
+<script data-goatcounter="https://termen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
